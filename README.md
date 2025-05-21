@@ -1,1 +1,63 @@
 # kenduigraha.com
+
+Personal website of Ken Duigraha Putra
+
+Pages:
+- Home
+- Portfolio
+- Contact
+
+## Inspirations
+- [Budi Gunawan](https://www.budigunawan.com/)
+- [Sonny Lazuardi](https://sonnylab.framer.website/)
+
+## Page Structure
+#### 1. Home
+- Navbar
+- Content
+  - Header
+  - Achievements
+  - My Skills
+    - node.js
+    - react.js
+    - tailwindcss
+    - redux
+    - HTML5
+    - CSS3
+    - javascript
+  - Experiences
+  - Contact
+- Footer
+<img width="105" alt="image" src="https://github.com/user-attachments/assets/5aa7f900-6c06-4bfc-97b1-c021d1268639" />
+
+#### 2. Portfolio Page
+- Navbar
+- Content
+  - List of Portfolio
+- Footer
+<img width="180" alt="image" src="https://github.com/user-attachments/assets/56da8689-9357-458b-848a-f96be0738a74" />
+
+#### 3. Contact Page
+- Navbar
+- Content
+  - Contact form
+- Footer
+<img width="179" alt="image" src="https://github.com/user-attachments/assets/c07427fa-a66f-4472-9212-4205cd1bd4ef" />
+
+#### Social Media:
+- [LinkedIn](https://www.linkedin.com/in/kenduigraha/)
+- [GitHub](https://github.com/kenduigraha)
+
+## Screenshots
+#### Home Page
+<img width="185" alt="image" src="https://github.com/user-attachments/assets/b7bbaa2f-b11b-492b-a04a-7ffb0cdec8ae" />
+
+#### Portfolio Page
+<img width="187" alt="image" src="https://github.com/user-attachments/assets/9625958c-c2df-4ec5-931d-f3afdc9aa95c" />
+
+#### Contact Page
+<img width="422" alt="image" src="https://github.com/user-attachments/assets/a9f7ea1f-7378-42d5-9701-42839468764f" />
+
+## Link (Coming Soon)
+[kenduigraha.com](https://kenduigraha.com)
+
