@@ -1,7 +1,8 @@
 # kenduigraha.com
+[kenduigraha.com](https://kenduigraha.com)
 
 Personal website of Ken Duigraha Putra
-
+![alt text](1680314342364.jpg)
 Pages:
 - Home
 - Portfolio
@@ -28,21 +29,18 @@ Pages:
   - Experiences
   - Contact
 - Footer
-<img width="105" alt="image" src="https://github.com/user-attachments/assets/5aa7f900-6c06-4bfc-97b1-c021d1268639" />
 
 #### 2. Portfolio Page
 - Navbar
 - Content
   - List of Portfolio
 - Footer
-<img width="180" alt="image" src="https://github.com/user-attachments/assets/56da8689-9357-458b-848a-f96be0738a74" />
 
 #### 3. Contact Page
 - Navbar
 - Content
   - Contact form
 - Footer
-<img width="179" alt="image" src="https://github.com/user-attachments/assets/c07427fa-a66f-4472-9212-4205cd1bd4ef" />
 
 #### Social Media:
 - [LinkedIn](https://www.linkedin.com/in/kenduigraha/)
@@ -58,7 +56,4 @@ Pages:
 
 #### Contact Page
 <img width="422" alt="image" src="https://github.com/user-attachments/assets/a9f7ea1f-7378-42d5-9701-42839468764f" />
-
-## Link (Coming Soon)
-[kenduigraha.com](https://kenduigraha.com)
 
