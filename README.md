@@ -49,6 +49,7 @@ Pages:
 - [GitHub](https://github.com/kenduigraha)
 
 ## Screenshots
+[Figma Link](https://www.figma.com/design/8CNI318ggHHfnMrvMpObl8/kenduigraha.com?node-id=0-1&t=QPl6bQuMdCGd1l50-1)
 #### Home Page
 <img width="185" alt="image" src="https://github.com/user-attachments/assets/b7bbaa2f-b11b-492b-a04a-7ffb0cdec8ae" />
 
