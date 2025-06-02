@@ -2,7 +2,7 @@
 [kenduigraha.com](https://kenduigraha.com)
 
 Personal website of Ken Duigraha Putra
-![alt text](ken-picture.jpg)
+![alt text](/assets/images/ken-picture.jpg)
 
 Pages:
 - Home
