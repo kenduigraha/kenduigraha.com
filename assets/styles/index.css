@@ -1,0 +1,13 @@
+.tech-icon {
+  width: 100px;
+  height: 100px;
+  fill: currentColor;
+}
+
+.react { color: #61DAFB; }
+.node { color: #339933; }
+.tailwindcss { color: #06B6D4; }
+.redux { color: #764ABC; }
+.html5 { color: #E34F26; }
+.css3 { color: #1572B6; }
+.js { color: #F7DF1E; }
