@@ -293,14 +293,10 @@ body {
 }
 
 .stack-grid img {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
 }
 
-/* Hidden figcaption */
-.stack-grid figcaption {
-  display: none;
-}
 /* end of tech stack section */
 .contact-section {
   background-color: #000;
@@ -430,3 +426,48 @@ body {
   margin-top: 4px;
   display: none;
 }
+
+/* tooltip tech stack */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  max-width: 200px;
+  background-color: rgba(34, 34, 34, 0.9);
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+
+  position: absolute;
+  bottom: 110%; /* di atas gambar */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%; /* segitiga bawah tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(34, 34, 34, 0.9) transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* end of tooltip tech stack */
