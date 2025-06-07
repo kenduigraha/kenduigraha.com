@@ -32,6 +32,11 @@ body {
   background-color: #0F0F1A;
   color: white;
 }
+.navbar a {
+  text-decoration: none;
+  color: var(--color-light);
+  font-weight: normal;
+}
 .navbar-inner {
   max-width: 1200px;
   margin: 0 auto;

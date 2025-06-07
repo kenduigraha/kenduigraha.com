@@ -46,6 +46,5 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
   if (valid) {
     alert('Form submitted successfully!');
-    // Lanjut ke pengiriman data lewat fetch/ajax kalau kamu mau
   }
 });
