@@ -32,6 +32,11 @@
   display: block;
 }
 
+.portfolio-item a {
+  text-decoration: none;
+  color: var(--color-bgblue)
+}
+
 .overlay {
   position: absolute;
   inset: 0;
