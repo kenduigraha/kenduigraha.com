@@ -5,6 +5,7 @@
   --color-light: #ffffff;
   --color-accent: #00c2ff;
   --color-muted: #ccc;
+  --color-bluesky: #2298BD;
 }
 
 * {
@@ -380,53 +381,6 @@ body {
   }
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem 0;
-}
-
-.portfolio-item {
-  position: relative;
-  background-color: #2298bd;
-  background-size: cover;
-  background-position: center;
-  aspect-ratio: 1 / 1;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* gelap transparan */
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
-
-.portfolio-item:hover .overlay {
-  opacity: 1;
-}
-
-.input-error {
-  border: 1px solid red;
-  background-color: #ffe6e6;
-}
-#error-message {
-  color: red;
-  font-size: 0.875rem;
-  margin-top: 4px;
-  display: none;
-}
-
 /* tooltip tech stack */
 .tooltip-container {
   position: relative;
@@ -469,5 +423,4 @@ body {
   visibility: visible;
   opacity: 1;
 }
-
 /* end of tooltip tech stack */
