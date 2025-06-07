@@ -26,6 +26,10 @@ body {
   margin: 0 auto;
   padding: 2rem;
 }
+
+.bold {
+  font-weight: 600;
+}
 /* navbar section */
 .navbar {
   width: 100%;
@@ -109,7 +113,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   line-height: 35px;
-  letter-spacing: 0%;
 }
 
 .hero-buttons {
@@ -259,15 +262,11 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 2rem;
+  font-size: 1rem;
 }
 .stats div strong {
   display: block;
   font-weight: bold;
-  font-family: 'Outfit', sans-serif;
-}
-.stats div p {
-  margin: 0.5rem 0 0;
-  font-family: 'Outfit', sans-serif;
 }
 
 /* tech stack section */
