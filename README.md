@@ -1,8 +1,9 @@
 # kenduigraha.com
 [kenduigraha.com](https://kenduigraha.com)
 
-Personal website of Ken Duigraha Putra
 ![alt text](/assets/images/kenduigraha.jpg)
+
+Personal website of Ken Duigraha Putra
 
 Pages:
 - Home
