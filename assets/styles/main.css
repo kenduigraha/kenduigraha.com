@@ -79,44 +79,22 @@ body {
   background-color: white;
   transition: all 0.3s ease-in-out;
 }
-/* responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 32px;
-    width: 100px;
-    flex-direction: column;
-    background-color: #0F0F1A;
-    padding: 16px;
-    border: 1px solid #1c1c2a;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
 /* end of navbar section */
 
 /* hero section */
 .hero-section {
   padding: 4rem 1rem;
   text-align: center;
-background-color: #0f0f1b;
+  background-color: #0f0f1b;
   color: white;
 }
 
 .hero-title {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .hero-name {
-font-weight: 800;
+  font-weight: 800;
   color: var(--color-bgblue);
 }
 
@@ -124,21 +102,21 @@ font-weight: 800;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-line-height: 35px;
+  line-height: 35px;
   letter-spacing: 0%;
 }
 
 .hero-buttons {
-display: flex;
+  display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .btn {
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
@@ -153,7 +131,7 @@ flex-wrap: wrap;
 
 .btn-outline:hover {
   background-color: #00bfff;
-  color: black;
+  color: var(--color-light);
 }
 
 .btn-filled {
@@ -167,12 +145,10 @@ flex-wrap: wrap;
 .experience {
   background: #fff;
   color: #000;
-  padding: 4rem 0;
   text-align: center;
 }
 
 .experience h2 {
-  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
 }
@@ -182,17 +158,14 @@ flex-wrap: wrap;
 }
 
 .job h3 {
-  font-size: 1.25rem;
   font-weight: 700;
 }
 
 .job .title {
-  font-size: 1rem;
   font-weight: 600;
 }
 
 .job span {
-  font-size: 0.875rem;
   font-weight: 300;
   color: #555;
 }
@@ -201,9 +174,9 @@ flex-wrap: wrap;
   background: #0a0a19;
   color: var(--color-light);
   padding: 2rem 1rem;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .footer-inner {
@@ -222,12 +195,10 @@ flex-wrap: wrap;
 }
 
 .brand {
-  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .tagline {
-  font-size: 0.9rem;
   margin-top: 0.5rem;
   color: #cccccc;
 }
@@ -235,7 +206,6 @@ flex-wrap: wrap;
 .section-title {
   font-weight: bold;
   margin-bottom: 0.8rem;
-  font-size: 0.95rem;
 }
 
 .footer-links {
@@ -262,7 +232,6 @@ flex-wrap: wrap;
 }
 
 .footer-section h4 {
-  font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -286,7 +255,6 @@ flex-wrap: wrap;
   gap: 2rem;
 }
 .stats div strong {
-  font-size: 2rem;
   display: block;
   font-weight: bold;
   font-family: 'Outfit', sans-serif;
@@ -296,54 +264,67 @@ flex-wrap: wrap;
   font-family: 'Outfit', sans-serif;
 }
 
+/* tech stack section */
 .stack-section {
-  background-color: #0e0f1b;
+  background-color: #0f0f1b;
+  padding: 3rem 3rem;
   color: white;
   text-align: center;
-  padding: 3rem 1rem;
 }
-.stack-section h2 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.75rem;
-}
-.stack-section h3 {
+.stack-title {
   font-weight: bold;
-  margin: 1rem 0;
-  font-size: 1.25rem;
-}
-.stack-icons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-.stack-icons img {
-  width: 50px;
-  height: auto;
+  margin-bottom: 1.5rem;
 }
 
+.stack-subtitle {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stack-grid figure {
+  flex: 1 0 21%;
+  margin: 5px;
+  height: 100px;
+}
+
+.stack-grid img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Hidden figcaption */
+.stack-grid figcaption {
+  display: none;
+}
+/* end of tech stack section */
 .contact-section {
   background-color: #000;
   color: white;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 1.8rem 1rem;
+}
+.contact-section .socials {
+    margin-top: 25px;
 }
 .contact-details {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 10rem;
   flex-wrap: wrap;
   margin-top: 1rem;
 }
 .contact-details div p {
   margin-top: 0.25rem;
-  font-size: 0.95rem;
 }
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 8rem;
   margin-top: 1.5rem;
 }
 .social-icons img {
@@ -352,12 +333,38 @@ flex-wrap: wrap;
   filter: brightness(0) invert(1);
 }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
-@media (min-width: 768px) {
-  .stack-icons img {
-    width: 60px;
+/* responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 32px;
+    width: 100px;
+    flex-direction: column;
+    background-color: #0F0F1A;
+    padding: 16px;
+    border: 1px solid #1c1c2a;
   }
 
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  .contact-details,
+  .social-icons {
+    gap: 2rem;
+  }
+  .stack-grid img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 768px) {
   .contact-info {
     flex-direction: row;
     justify-content: center;
@@ -375,4 +382,51 @@ flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
   }
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.portfolio-item {
+  position: relative;
+  background-color: #2298bd;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* gelap transparan */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+.input-error {
+  border: 1px solid red;
+  background-color: #ffe6e6;
+}
+#error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: none;
 }
