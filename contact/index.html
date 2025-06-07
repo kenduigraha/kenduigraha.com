@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ken Duigraha Putra</title>
 		<link rel="stylesheet" href="/assets/styles/main.css" />
+		<link rel="stylesheet" href="/assets/styles/contact.css" />
 	</head>
 	<body>
 		<header class="navbar">
@@ -24,19 +25,21 @@
 		</header>
 
 		<main>
-			<section aria-labelledby="contact-heading">
-				<h1 id="contact-heading">Contact me</h1>
+			<section aria-labelledby="contact-heading" class="contactme-section">
+				<h1 class="contact-heading">Contact me</h1>
 
 				<form id="contactForm" novalidate>
-					<div>
-						<label for="first-name">First Name</label>
-						<input type="text" id="first-name" name="first-name" required />
-						<p id="first-name-error" class="error-message"></p>
-					</div>
-					<div>
-						<label for="last-name">Last Name</label>
-						<input type="text" id="last-name" name="last-name" required />
-						<p id="last-name-error" class="error-message"></p>
+					<div class="row">
+						<div>
+							<label for="first-name">First Name</label>
+							<input type="text" id="first-name" name="first-name" required />
+							<p id="first-name-error" class="error-message"></p>
+						</div>
+						<div>
+							<label for="last-name">Last Name</label>
+							<input type="text" id="last-name" name="last-name" required />
+							<p id="last-name-error" class="error-message"></p>
+						</div>
 					</div>
 					<div>
 						<label for="email">Email</label>
