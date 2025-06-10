@@ -1,14 +1,13 @@
 "use client"
 
 import type React from "react"
-import { useState, useRef } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Footer from "@/components/footer"
-import emailjs from "@emailjs/browser"
+import { sendEmail } from "../actions/email"
 
 export default function Contact() {
-  const form = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -32,15 +31,9 @@ export default function Contact() {
     setError("")
 
     try {
-      // Replace these with your actual EmailJS credentials
-      const serviceId = "YOUR_SERVICE_ID" // Create this in EmailJS dashboard
-      const templateId = "YOUR_TEMPLATE_ID" // Create this in EmailJS dashboard
-      const publicKey = "YOUR_PUBLIC_KEY" // Get this from EmailJS dashboard
+      const result = await sendEmail(formData)
 
-      if (form.current) {
-        await emailjs.sendForm(serviceId, templateId, form.current, publicKey)
-
-        console.log("Email sent successfully!")
+      if (result.success) {
         setIsSubmitting(false)
         setIsSubmitted(true)
         setFormData({
@@ -53,6 +46,9 @@ export default function Contact() {
 
         // Reset success message after 5 seconds
         setTimeout(() => setIsSubmitted(false), 5000)
+      } else {
+        setError(result.message)
+        setIsSubmitting(false)
       }
     } catch (err) {
       console.error("Failed to send email:", err)
@@ -86,7 +82,7 @@ export default function Contact() {
         <div className="container mx-auto max-w-2xl">
           <h1 className="text-4xl font-bold mb-12 text-center text-bg">Contact me</h1>
 
-          <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <input

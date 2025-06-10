@@ -102,25 +102,25 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 max-w-4xl mx-auto">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/icons/tech/nodejs.svg" alt="Node.js" width={64} height={64} />
+                  <Image src="/icons/tech/nodejs.png" alt="Node.js" width={64} height={64} />
                 </div>
                 <span className="text-muted text-sm">Node.js</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/icons/tech/reactjs.svg" alt="React" width={64} height={64} />
+                  <Image src="/icons/tech/reactjs.png" alt="React" width={64} height={64} />
                 </div>
                 <span className="text-muted text-sm">React</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/icons/tech/tailwindcss.svg" alt="Tailwind CSS" width={64} height={64} />
+                  <Image src="/icons/tech/tailwindcss.png" alt="Tailwind CSS" width={64} height={64} />
                 </div>
                 <span className="text-muted text-sm">Tailwind CSS</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/icons/tech/redux.svg" alt="Redux" width={64} height={64} />
+                  <Image src="/icons/tech/redux.png" alt="Redux" width={64} height={64} />
                 </div>
                 <span className="text-muted text-sm">Redux</span>
               </div>
@@ -128,19 +128,19 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-lg mx-auto">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/icons/tech/html5.svg" alt="HTML5" width={64} height={64} />
+                  <Image src="/icons/tech/html5.png" alt="HTML5" width={64} height={64} />
                 </div>
                 <span className="text-muted text-sm">HTML5</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/icons/tech/css3.svg" alt="CSS3" width={64} height={64} />
+                  <Image src="/icons/tech/css3.png" alt="CSS3" width={64} height={64} />
                 </div>
                 <span className="text-muted text-sm">CSS3</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/icons/tech/javascript.svg" alt="JavaScript" width={64} height={64} />
+                  <Image src="/icons/tech/javascript.png" alt="JavaScript" width={64} height={64} />
                 </div>
                 <span className="text-muted text-sm">JavaScript</span>
               </div>
@@ -203,13 +203,13 @@ export default function Home() {
           <h3 className="font-semibold mb-6">Socials</h3>
           <div className="flex justify-center space-x-8">
             <Link href="https://github.com" className="hover:text-muted transition-colors">
-              <Image src="/icons/social/github.svg" alt="GitHub" width={32} height={32} />
+              <Image src="/icons/social/github.png" alt="GitHub" width={32} height={32} />
             </Link>
             <Link href="https://linkedin.com" className="hover:text-muted transition-colors">
-              <Image src="/icons/social/linkedin.svg" alt="LinkedIn" width={32} height={32} />
+              <Image src="/icons/social/linkedin.png" alt="LinkedIn" width={32} height={32} />
             </Link>
             <Link href="https://telegram.org" className="hover:text-muted transition-colors">
-              <Image src="/icons/social/telegram.svg" alt="Telegram" width={32} height={32} />
+              <Image src="/icons/social/telegram.png" alt="Telegram" width={32} height={32} />
             </Link>
           </div>
         </div>
