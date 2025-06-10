@@ -29,7 +29,7 @@ export default function Home() {
         <div className="px-6 pb-20 pt-8 lg:px-12">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             {/* Text Content */}
-            <div className="max-w-2xl lg:max-w-xl">
+            <div className="flex-1 max-w-2xl lg:max-w-xl order-2 lg:order-1">
               <p className="text-muted mb-2 text-base">Hi, my name is</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-light leading-tight">
                 Ken Duigraha Putra
@@ -56,7 +56,7 @@ export default function Home() {
             </div>
 
             {/* Profile Image */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 order-1 lg:order-2">
               <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-light/20">
                 <Image
                   src="/images/kenduigraha.jpg"
