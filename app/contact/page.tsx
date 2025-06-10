@@ -1,40 +1,32 @@
 "use client"
 
 import type React from "react"
-import { useState, useRef, useCallback } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Footer from "@/components/footer"
-import ReCAPTCHA from "react-google-recaptcha"
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null)
-  const recaptchaRef = useRef<ReCAPTCHA>(null)
-
-  const onCaptchaChange = useCallback((value: string | null) => {
-    setCaptchaValue(value)
-  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError("")
 
-    // Check if captcha is completed
-    if (!captchaValue) {
-      setError("Please complete the captcha verification.")
-      setIsSubmitting(false)
-      return
-    }
-
     const form = e.currentTarget
     const formData = new FormData(form)
 
-    // Add captcha value to form data
-    formData.append("g-recaptcha-response", captchaValue)
+    // Check honeypot field (should be empty)
+    const honeypot = formData.get("_gotcha") as string
+    if (honeypot) {
+      // This is likely a bot submission
+      setError("Spam detected. Please try again.")
+      setIsSubmitting(false)
+      return
+    }
 
     try {
       // Replace with your actual Formspree form ID
@@ -49,8 +41,6 @@ export default function Contact() {
       if (response.ok) {
         setIsSubmitted(true)
         form.reset()
-        setCaptchaValue(null)
-        recaptchaRef.current?.reset()
         // Reset success message after 5 seconds
         setTimeout(() => setIsSubmitted(false), 5000)
       } else {
@@ -59,8 +49,6 @@ export default function Contact() {
     } catch (error) {
       console.error("Error:", error)
       setError("Failed to send your message. Please try again later.")
-      recaptchaRef.current?.reset()
-      setCaptchaValue(null)
     } finally {
       setIsSubmitting(false)
     }
@@ -142,14 +130,10 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            {/* reCAPTCHA */}
-            <div className="flex justify-center">
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey="6LcEPVsrAAAAAMZe-aPzYucHcCLaToszJfsJhRgQ" // Replace with your actual site key
-                onChange={onCaptchaChange}
-                theme="light"
-              />
+            {/* Honeypot field - hidden from users but visible to bots */}
+            <div style={{ display: "none" }}>
+              <label htmlFor="_gotcha">Don't fill this out if you're human:</label>
+              <input type="text" name="_gotcha" id="_gotcha" tabIndex={-1} autoComplete="off" />
             </div>
 
             {/* Hidden fields for Formspree */}
@@ -160,7 +144,7 @@ export default function Contact() {
             <div className="text-center">
               <Button
                 type="submit"
-                disabled={isSubmitting || !captchaValue}
+                disabled={isSubmitting}
                 className="bg-bluesky hover:bg-bluesky/90 text-light px-12 py-3 rounded-md text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send"}
