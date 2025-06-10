@@ -12,6 +12,11 @@
   --color-bluesky: #2298bd;
 }
 
+body {
+  background-color: var(--color-bg);
+  color: var(--color-light);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
