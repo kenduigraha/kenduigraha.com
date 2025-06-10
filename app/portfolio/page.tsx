@@ -482,12 +482,13 @@ function ProjectCard({ item, featured }: { item: any; featured: boolean }) {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
           {item.demoUrl && (
             <a href={item.demoUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
               <Button className="w-full bg-bluesky hover:bg-bluesky/90 text-white text-sm flex items-center justify-center gap-2">
                 <ExternalLink className="w-4 h-4" />
-                Live Demo
+                <span className="hidden xs:inline">Live Demo</span>
+                <span className="xs:hidden">Demo</span>
               </Button>
             </a>
           )}
@@ -495,7 +496,8 @@ function ProjectCard({ item, featured }: { item: any; featured: boolean }) {
             <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
               <Button variant="outline" className="w-full text-sm flex items-center justify-center gap-2">
                 <Github className="w-4 h-4" />
-                Code
+                <span className="hidden xs:inline">Code</span>
+                <span className="xs:hidden">GitHub</span>
               </Button>
             </a>
           )}
