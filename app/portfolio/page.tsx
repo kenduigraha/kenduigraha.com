@@ -258,7 +258,7 @@ export default function Portfolio() {
                   {tech !== "All Technologies" && (
                     <div className="w-4 h-4 relative">
                       <Image
-                        src={`/icons/tech/${tech.toLowerCase().replace(".", "")}-logo.svg`}
+                        src={`/icons/tech/${tech.toLowerCase().replace(".", "")}.svg`}
                         alt={tech}
                         width={16}
                         height={16}
