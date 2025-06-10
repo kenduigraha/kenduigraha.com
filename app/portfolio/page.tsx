@@ -24,7 +24,7 @@ const portfolioItems = [
     type: "Web Application",
     status: "Live",
     githubStats: {
-      stars: 3,
+      stars: 5,
       forks: 2,
       language: "JavaScript",
     },
@@ -44,7 +44,7 @@ const portfolioItems = [
     type: "Landing Page",
     status: "Live",
     githubStats: {
-      stars: 2,
+      stars: 3,
       forks: 1,
       language: "JavaScript",
     },
@@ -64,8 +64,8 @@ const portfolioItems = [
     type: "Portfolio Website",
     status: "Live",
     githubStats: {
-      stars: 1,
-      forks: 0,
+      stars: 4,
+      forks: 1,
       language: "TypeScript",
     },
   },
@@ -84,8 +84,8 @@ const portfolioItems = [
     type: "Single Page Application",
     status: "Live",
     githubStats: {
-      stars: 2,
-      forks: 1,
+      stars: 7,
+      forks: 3,
       language: "JavaScript",
     },
   },
@@ -104,8 +104,8 @@ const portfolioItems = [
     type: "Single Page Application",
     status: "Live",
     githubStats: {
-      stars: 1,
-      forks: 0,
+      stars: 4,
+      forks: 2,
       language: "JavaScript",
     },
   },
@@ -124,8 +124,8 @@ const portfolioItems = [
     type: "UI Component",
     status: "Live",
     githubStats: {
-      stars: 1,
-      forks: 0,
+      stars: 6,
+      forks: 2,
       language: "TypeScript",
     },
   },
@@ -143,8 +143,8 @@ const portfolioItems = [
     type: "Web Application",
     status: "Development",
     githubStats: {
-      stars: 1,
-      forks: 0,
+      stars: 3,
+      forks: 1,
       language: "Vue",
     },
   },
