@@ -1,38 +1,153 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Footer from "@/components/footer"
+
+// Security utilities
+const sanitizeInput = (input: string): string => {
+  return input
+    .replace(/[<>]/g, "") // Remove potential XSS characters
+    .replace(/['"]/g, "") // Remove quotes that could be used in injection
+    .replace(/javascript:/gi, "") // Remove javascript: protocol
+    .replace(/on\w+=/gi, "") // Remove event handlers
+    .trim()
+}
+
+const validatePhoneNumber = (phone: string): boolean => {
+  // Allow numbers, spaces, hyphens, parentheses, and plus sign
+  const phoneRegex = /^[\d\s\-$$$$+]*$/
+  return phoneRegex.test(phone)
+}
+
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
+  const [validationErrors, setValidationErrors] = useState<{ [key: string]: string }>({})
+
+  // Rate limiting state
+  const submissionAttempts = useRef(0)
+  const lastSubmissionTime = useRef(0)
+  const maxAttempts = 3
+  const cooldownPeriod = 60000 // 1 minute
+
+  const validateForm = (formData: FormData): boolean => {
+    const errors: { [key: string]: string } = {}
+
+    const firstName = sanitizeInput(formData.get("firstName") as string)
+    const lastName = sanitizeInput(formData.get("lastName") as string)
+    const email = sanitizeInput(formData.get("email") as string)
+    const phone = sanitizeInput(formData.get("phone") as string)
+    const message = sanitizeInput(formData.get("message") as string)
+
+    // Validate required fields
+    if (!firstName || firstName.length < 2) {
+      errors.firstName = "First name must be at least 2 characters"
+    }
+    if (!lastName || lastName.length < 2) {
+      errors.lastName = "Last name must be at least 2 characters"
+    }
+    if (!email || !validateEmail(email)) {
+      errors.email = "Please enter a valid email address"
+    }
+    if (phone && !validatePhoneNumber(phone)) {
+      errors.phone = "Phone number can only contain numbers, spaces, hyphens, parentheses, and plus sign"
+    }
+    if (!message || message.length < 10) {
+      errors.message = "Message must be at least 10 characters"
+    }
+
+    // Check for suspicious content (potential XSS)
+    const suspiciousPatterns = [/<script/i, /javascript:/i, /on\w+=/i, /<iframe/i, /<object/i, /<embed/i]
+
+    const allContent = `${firstName} ${lastName} ${email} ${phone} ${message}`
+    for (const pattern of suspiciousPatterns) {
+      if (pattern.test(allContent)) {
+        errors.security = "Suspicious content detected. Please remove any HTML or script tags."
+        break
+      }
+    }
+
+    setValidationErrors(errors)
+    return Object.keys(errors).length === 0
+  }
+
+  const checkRateLimit = (): boolean => {
+    const now = Date.now()
+
+    // Reset attempts if cooldown period has passed
+    if (now - lastSubmissionTime.current > cooldownPeriod) {
+      submissionAttempts.current = 0
+    }
+
+    if (submissionAttempts.current >= maxAttempts) {
+      const remainingTime = Math.ceil((cooldownPeriod - (now - lastSubmissionTime.current)) / 1000)
+      setError(`Too many submission attempts. Please wait ${remainingTime} seconds before trying again.`)
+      return false
+    }
+
+    return true
+  }
+
+  const handlePhoneInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    // Only allow numbers, spaces, hyphens, parentheses, and plus sign
+    const sanitizedValue = value.replace(/[^\d\s\-$$$$+]/g, "")
+    e.target.value = sanitizedValue
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsSubmitting(true)
     setError("")
+    setValidationErrors({})
+
+    // Check rate limiting
+    if (!checkRateLimit()) {
+      return
+    }
 
     const form = e.currentTarget
     const formData = new FormData(form)
 
+    // Validate form
+    if (!validateForm(formData)) {
+      return
+    }
+
+    setIsSubmitting(true)
+    submissionAttempts.current++
+    lastSubmissionTime.current = Date.now()
+
     // Check honeypot field (should be empty)
     const honeypot = formData.get("_gotcha") as string
     if (honeypot) {
-      // This is likely a bot submission
       setError("Spam detected. Please try again.")
       setIsSubmitting(false)
       return
     }
 
+    // Sanitize all form data before sending
+    const sanitizedData = new FormData()
+    for (const [key, value] of formData.entries()) {
+      if (typeof value === "string") {
+        sanitizedData.append(key, sanitizeInput(value))
+      } else {
+        sanitizedData.append(key, value)
+      }
+    }
+
     try {
-      // Replace with your actual Formspree form ID
       const response = await fetch("https://formspree.io/f/mwpblwgd", {
         method: "POST",
-        body: formData,
+        body: sanitizedData,
         headers: {
           Accept: "application/json",
         },
@@ -41,7 +156,7 @@ export default function Contact() {
       if (response.ok) {
         setIsSubmitted(true)
         form.reset()
-        // Reset success message after 5 seconds
+        submissionAttempts.current = 0 // Reset on successful submission
         setTimeout(() => setIsSubmitted(false), 5000)
       } else {
         const errorData = await response.json()
@@ -88,8 +203,14 @@ export default function Contact() {
                   name="firstName"
                   placeholder="First Name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent"
+                  maxLength={50}
+                  className={`w-full px-4 py-3 rounded-md border text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent ${
+                    validationErrors.firstName ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {validationErrors.firstName && (
+                  <p className="text-red-500 text-sm mt-1">{validationErrors.firstName}</p>
+                )}
               </div>
               <div>
                 <input
@@ -97,8 +218,12 @@ export default function Contact() {
                   name="lastName"
                   placeholder="Last Name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent"
+                  maxLength={50}
+                  className={`w-full px-4 py-3 rounded-md border text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent ${
+                    validationErrors.lastName ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {validationErrors.lastName && <p className="text-red-500 text-sm mt-1">{validationErrors.lastName}</p>}
               </div>
             </div>
 
@@ -108,17 +233,29 @@ export default function Contact() {
                 name="email"
                 placeholder="Email"
                 required
-                className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent"
+                maxLength={100}
+                className={`w-full px-4 py-3 rounded-md border text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent ${
+                  validationErrors.email ? "border-red-500" : "border-gray-300"
+                }`}
               />
+              {validationErrors.email && <p className="text-red-500 text-sm mt-1">{validationErrors.email}</p>}
             </div>
 
             <div>
               <input
                 type="tel"
                 name="phone"
-                placeholder="Phone Number"
-                className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent"
+                placeholder="Phone Number (numbers only)"
+                maxLength={20}
+                onChange={handlePhoneInput}
+                className={`w-full px-4 py-3 rounded-md border text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent ${
+                  validationErrors.phone ? "border-red-500" : "border-gray-300"
+                }`}
               />
+              {validationErrors.phone && <p className="text-red-500 text-sm mt-1">{validationErrors.phone}</p>}
+              <p className="text-gray-500 text-xs mt-1">
+                Only numbers, spaces, hyphens, parentheses, and plus sign are allowed
+              </p>
             </div>
 
             <div>
@@ -127,9 +264,20 @@ export default function Contact() {
                 placeholder="Message"
                 required
                 rows={6}
-                className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent resize-none"
+                maxLength={1000}
+                className={`w-full px-4 py-3 rounded-md border text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent resize-none ${
+                  validationErrors.message ? "border-red-500" : "border-gray-300"
+                }`}
               ></textarea>
+              {validationErrors.message && <p className="text-red-500 text-sm mt-1">{validationErrors.message}</p>}
             </div>
+
+            {/* Security error display */}
+            {validationErrors.security && (
+              <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+                <p>{validationErrors.security}</p>
+              </div>
+            )}
 
             {/* Honeypot field - hidden from users but visible to bots */}
             <div style={{ display: "none" }}>
