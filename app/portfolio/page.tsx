@@ -5,7 +5,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Footer from "@/components/footer"
-import { Github, Star, GitFork, ExternalLink } from "lucide-react"
+import GitHubStats from "@/components/github-stats"
+import { Github, Star, ExternalLink } from "lucide-react"
 
 // Real portfolio data based on user's projects
 const portfolioItems = [
@@ -23,7 +24,7 @@ const portfolioItems = [
     year: "2021",
     type: "Web Application",
     status: "Live",
-    githubStats: {
+    fallbackStats: {
       stars: 5,
       forks: 2,
       language: "JavaScript",
@@ -43,7 +44,7 @@ const portfolioItems = [
     year: "2025",
     type: "Landing Page",
     status: "Live",
-    githubStats: {
+    fallbackStats: {
       stars: 3,
       forks: 1,
       language: "JavaScript",
@@ -63,7 +64,7 @@ const portfolioItems = [
     year: "2025",
     type: "Portfolio Website",
     status: "Live",
-    githubStats: {
+    fallbackStats: {
       stars: 4,
       forks: 1,
       language: "TypeScript",
@@ -83,7 +84,7 @@ const portfolioItems = [
     year: "2020",
     type: "Single Page Application",
     status: "Live",
-    githubStats: {
+    fallbackStats: {
       stars: 7,
       forks: 3,
       language: "JavaScript",
@@ -99,11 +100,11 @@ const portfolioItems = [
     technologies: ["React.js", "Redux", "Single Page Application", "Create React App"],
     featured: false,
     demoUrl: "https://marvel-directory.firebaseapp.com/",
-    githubUrl: "https://github.com/kenduigraha/portofolio-multiple-SPA/tree/master/react-projects/marvel-dictionary",
+    githubUrl: "https://github.com/kenduigraha/portofolio-multiple-SPA",
     year: "2018",
     type: "Single Page Application",
     status: "Live",
-    githubStats: {
+    fallbackStats: {
       stars: 4,
       forks: 2,
       language: "JavaScript",
@@ -123,7 +124,7 @@ const portfolioItems = [
     year: "2025",
     type: "UI Component",
     status: "Live",
-    githubStats: {
+    fallbackStats: {
       stars: 6,
       forks: 2,
       language: "TypeScript",
@@ -142,7 +143,7 @@ const portfolioItems = [
     year: "2025",
     type: "Web Application",
     status: "Development",
-    githubStats: {
+    fallbackStats: {
       stars: 3,
       forks: 1,
       language: "Vue",
@@ -210,6 +211,10 @@ export default function Portfolio() {
               Showcasing expertise in modern web technologies including React.js, Vue.js, and Node.js with a focus on
               scalable, performant applications.
             </p>
+            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span>Real-time GitHub stats</span>
+            </div>
           </div>
 
           {/* Technology Stats */}
@@ -457,18 +462,7 @@ function ProjectCard({ item, featured }: { item: any; featured: boolean }) {
       <div className="p-6">
         <div className="mb-2 flex items-center justify-between">
           <span className="text-gray-500 text-sm font-medium">{item.type}</span>
-          {item.githubStats && (
-            <div className="flex items-center gap-3 text-xs text-gray-500">
-              <div className="flex items-center gap-1">
-                <Star className="w-3 h-3" />
-                {item.githubStats.stars}
-              </div>
-              <div className="flex items-center gap-1">
-                <GitFork className="w-3 h-3" />
-                {item.githubStats.forks}
-              </div>
-            </div>
-          )}
+          {item.githubUrl && <GitHubStats githubUrl={item.githubUrl} fallbackStats={item.fallbackStats} />}
         </div>
 
         <h3 className="text-xl font-bold text-bg mb-3">{item.title}</h3>
