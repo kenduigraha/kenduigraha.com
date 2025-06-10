@@ -27,20 +27,46 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="px-6 pb-20 pt-8 lg:px-12">
-          <div className="max-w-2xl">
-            <p className="text-muted mb-2">Hi, my name is</p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-light leading-tight">Ken Duigraha Putra</h1>
-            <p className="text-muted text-lg mb-8 leading-relaxed">
-              A Professional Frontend Engineer with 6+ years of experience in building high-performance, scalable, and
-              responsive web solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="outline" size="lg" className="bg-light text-bg border-light hover:bg-muted">
-                Hire Me
-              </Button>
-              <Button size="lg" className="bg-bluesky hover:bg-bluesky/90 text-light">
-                View Portfolio
-              </Button>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            {/* Text Content */}
+            <div className="max-w-2xl lg:max-w-xl">
+              <p className="text-muted mb-2 text-base">Hi, my name is</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-light leading-tight">
+                Ken Duigraha Putra
+              </h1>
+              <p className="text-muted text-base md:text-lg mb-8 leading-relaxed">
+                A Professional Frontend Engineer with 6+ years of experience in building high-performance, scalable, and
+                responsive web solutions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-light text-bg border-light hover:bg-gray-100 px-8 py-3 text-base font-medium rounded-md"
+                >
+                  Hire Me
+                </Button>
+                <Button
+                  size="lg"
+                  className="bg-bluesky hover:bg-bluesky/90 text-light px-8 py-3 text-base font-medium rounded-md"
+                >
+                  View Portfolio
+                </Button>
+              </div>
+            </div>
+
+            {/* Profile Image */}
+            <div className="flex-shrink-0">
+              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-light/20">
+                <Image
+                  src="/images/kenduigraha.jpg"
+                  alt="Ken Duigraha Putra"
+                  width={384}
+                  height={384}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -85,12 +111,12 @@ export default function Home() {
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="Wave" width={64} height={64} />
+                  <Image src="/placeholder.svg?height=64&width=64" alt="Tailwind CSS" width={64} height={64} />
                 </div>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="Framework" width={64} height={64} />
+                  <Image src="/placeholder.svg?height=64&width=64" alt="Next.js" width={64} height={64} />
                 </div>
               </div>
             </div>
