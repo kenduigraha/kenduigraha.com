@@ -27,18 +27,18 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="px-6 pb-20 pt-8 lg:px-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            {/* Text Content */}
-            <div className="flex-1 max-w-2xl lg:max-w-xl order-2 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content - Left Side */}
+            <div className="space-y-6">
               <p className="text-muted mb-2 text-base">Hi, my name is</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-light leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-light leading-tight">
                 Ken Duigraha Putra
               </h1>
-              <p className="text-muted text-base md:text-lg mb-8 leading-relaxed">
+              <p className="text-muted text-base md:text-lg leading-relaxed">
                 A Professional Frontend Engineer with 6+ years of experience in building high-performance, scalable, and
                 responsive web solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
                   variant="outline"
                   size="lg"
@@ -55,8 +55,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Profile Image */}
-            <div className="flex-shrink-0 order-1 lg:order-2">
+            {/* Profile Image - Right Side */}
+            <div className="flex justify-center lg:justify-end">
               <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-light/20">
                 <Image
                   src="/images/kenduigraha.jpg"
