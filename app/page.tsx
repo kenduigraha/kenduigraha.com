@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-lightGray px-6 py-4 lg:px-12">
+      <header className="bg-white px-6 py-4 lg:px-12 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <div className="text-xl font-semibold text-navy">Ken D. Putra</div>
           <nav className="flex items-center space-x-8">
@@ -24,7 +24,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-lightGray flex flex-col items-center justify-center px-6 py-20 text-center">
+      <section className="bg-white flex flex-col items-center justify-center px-6 py-20 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-navy">
           Hi, my name is
           <br />

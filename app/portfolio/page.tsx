@@ -13,7 +13,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-lightGray px-6 py-4 lg:px-12">
+      <header className="bg-white px-6 py-4 lg:px-12 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <div className="text-xl font-semibold text-navy">Ken D. Putra</div>
           <nav className="flex items-center space-x-8">
