@@ -20,14 +20,14 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["Outfit", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
       },
       colors: {
         bg: "#0d0d1f",
         bgblue: "#2B71A7",
         light: "#ffffff",
         accent: "#00c2ff",
-        muted: "#ccc",
+        muted: "#cccccc",
         bluesky: "#2298BD",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

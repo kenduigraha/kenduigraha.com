@@ -45,16 +45,16 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-outfit">
       {/* Header */}
       <header className="bg-bg px-6 py-6 lg:px-12">
         <div className="flex items-center justify-between">
           <div className="text-xl font-semibold text-light">Ken D. Putra</div>
           <nav className="flex items-center space-x-8">
-            <Link href="/" className="text-light hover:text-accent transition-colors">
+            <Link href="/" className="text-light hover:text-muted transition-colors">
               Home
             </Link>
-            <Link href="/portfolio" className="text-light hover:text-accent transition-colors">
+            <Link href="/portfolio" className="text-light hover:text-muted transition-colors">
               Portfolio
             </Link>
             <Link href="/contact" className="text-accent font-semibold">

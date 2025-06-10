@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-outfit">
       {/* Header & Hero Section */}
       <section className="bg-bg">
         {/* Header */}
@@ -12,13 +12,13 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="text-xl font-semibold text-light">Ken D. Putra</div>
             <nav className="flex items-center space-x-8">
-              <Link href="/" className="text-light hover:text-accent transition-colors">
+              <Link href="/" className="text-light hover:text-muted transition-colors">
                 Home
               </Link>
-              <Link href="/portfolio" className="text-light hover:text-accent transition-colors">
+              <Link href="/portfolio" className="text-light hover:text-muted transition-colors">
                 Portfolio
               </Link>
-              <Link href="/contact" className="text-light hover:text-accent transition-colors">
+              <Link href="/contact" className="text-light hover:text-muted transition-colors">
                 Contact
               </Link>
             </nav>
@@ -35,7 +35,7 @@ export default function Home() {
               responsive web solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="outline" size="lg" className="bg-light text-bg border-light hover:bg-gray-100">
+              <Button variant="outline" size="lg" className="bg-light text-bg border-light hover:bg-muted">
                 Hire Me
               </Button>
               <Button size="lg" className="bg-bluesky hover:bg-bluesky/90 text-light">
@@ -168,13 +168,13 @@ export default function Home() {
         <div>
           <h3 className="font-semibold mb-6">Socials</h3>
           <div className="flex justify-center space-x-8">
-            <Link href="https://github.com" className="hover:text-accent transition-colors">
+            <Link href="https://github.com" className="hover:text-muted transition-colors">
               <Image src="/placeholder.svg?height=32&width=32" alt="GitHub" width={32} height={32} />
             </Link>
-            <Link href="https://linkedin.com" className="hover:text-accent transition-colors">
+            <Link href="https://linkedin.com" className="hover:text-muted transition-colors">
               <Image src="/placeholder.svg?height=32&width=32" alt="LinkedIn" width={32} height={32} />
             </Link>
-            <Link href="https://twitter.com" className="hover:text-accent transition-colors">
+            <Link href="https://twitter.com" className="hover:text-muted transition-colors">
               <Image src="/placeholder.svg?height=32&width=32" alt="Tumblr" width={32} height={32} />
             </Link>
           </div>
