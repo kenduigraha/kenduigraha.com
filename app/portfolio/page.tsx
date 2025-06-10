@@ -139,6 +139,7 @@ const portfolioItems = [
     mainTechnology: "Vue.js",
     technologies: ["Vue.js", "Nuxt.js", "Tailwind CSS", "Movie API"],
     featured: false,
+    demoUrl: "https://moovie-time-plum.vercel.app",
     githubUrl: "https://github.com/kenduigraha/moovieTime",
     year: "2025",
     type: "Web Application",
