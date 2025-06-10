@@ -116,7 +116,7 @@ export default function Home() {
               <TechStackIcon src="/icons/tech/nodejs.svg" alt="Node.js" name="Node.js" />
               <TechStackIcon src="/icons/tech/reactjs.svg" alt="React" name="React" />
               <TechStackIcon src="/icons/tech/tailwindcss.svg" alt="Tailwind CSS" name="Tailwind CSS" />
-              <TechStackIcon src="/icons/tech/redux.png" alt="Redux" name="Redux" />
+              <TechStackIcon src="/icons/tech/redux.svg" alt="Redux" name="Redux" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-lg mx-auto">
               <TechStackIcon src="/icons/tech/html5.svg" alt="HTML5" name="HTML5" />
