@@ -1,27 +1,44 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useRef, useCallback } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Footer from "@/components/footer"
+import ReCAPTCHA from "react-google-recaptcha"
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null)
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
+
+  const onCaptchaChange = useCallback((value: string | null) => {
+    setCaptchaValue(value)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError("")
 
+    // Check if captcha is completed
+    if (!captchaValue) {
+      setError("Please complete the captcha verification.")
+      setIsSubmitting(false)
+      return
+    }
+
     const form = e.currentTarget
     const formData = new FormData(form)
 
+    // Add captcha value to form data
+    formData.append("g-recaptcha-response", captchaValue)
+
     try {
       // Replace with your actual Formspree form ID
-      const response = await fetch("https://formspree.io/f/mwpblwgd", {
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
         method: "POST",
         body: formData,
         headers: {
@@ -32,6 +49,8 @@ export default function Contact() {
       if (response.ok) {
         setIsSubmitted(true)
         form.reset()
+        setCaptchaValue(null)
+        recaptchaRef.current?.reset()
         // Reset success message after 5 seconds
         setTimeout(() => setIsSubmitted(false), 5000)
       } else {
@@ -40,6 +59,8 @@ export default function Contact() {
     } catch (error) {
       console.error("Error:", error)
       setError("Failed to send your message. Please try again later.")
+      recaptchaRef.current?.reset()
+      setCaptchaValue(null)
     } finally {
       setIsSubmitting(false)
     }
@@ -121,7 +142,17 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            {/* Hidden field for spam protection */}
+            {/* reCAPTCHA */}
+            <div className="flex justify-center">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="YOUR_RECAPTCHA_SITE_KEY" // Replace with your actual site key
+                onChange={onCaptchaChange}
+                theme="light"
+              />
+            </div>
+
+            {/* Hidden fields for Formspree */}
             <input type="hidden" name="_subject" value="New contact form submission from kenduigraha.com" />
             <input type="hidden" name="_next" value="https://kenduigraha.com/contact?success=true" />
             <input type="hidden" name="_captcha" value="false" />
@@ -129,8 +160,8 @@ export default function Contact() {
             <div className="text-center">
               <Button
                 type="submit"
-                disabled={isSubmitting}
-                className="bg-bluesky hover:bg-bluesky/90 text-light px-12 py-3 rounded-md text-lg disabled:opacity-50"
+                disabled={isSubmitting || !captchaValue}
+                className="bg-bluesky hover:bg-bluesky/90 text-light px-12 py-3 rounded-md text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send"}
               </Button>
@@ -149,30 +180,29 @@ export default function Contact() {
               )}
             </div>
           </form>
+        </div>
+      </div>
 
-          {/* Contact Information */}
-          <div className="mt-16 text-center">
-            <h2 className="text-2xl font-bold mb-8 text-bg">Other ways to reach me</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col items-center">
-                <h3 className="font-semibold mb-2 text-bg">Email</h3>
-                <a
-                  href="mailto:ken.duigraha@gmail.com"
-                  className="text-bluesky hover:text-bluesky/80 transition-colors"
-                >
-                  ken.duigraha@gmail.com
-                </a>
-              </div>
-              <div className="flex flex-col items-center">
-                <h3 className="font-semibold mb-2 text-bg">Phone</h3>
-                <a href="tel:+6281213858586" className="text-bluesky hover:text-bluesky/80 transition-colors">
-                  +62 812 1385 8586
-                </a>
-              </div>
+      {/* Other ways to reach me - Dark Section */}
+      <section className="py-16 px-6 bg-bg text-light">
+        <div className="container mx-auto max-w-2xl text-center">
+          <h2 className="text-2xl font-bold mb-8 text-light">Other ways to reach me</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-col items-center">
+              <h3 className="font-semibold mb-2 text-light">Email</h3>
+              <a href="mailto:ken.duigraha@gmail.com" className="text-muted hover:text-light transition-colors">
+                ken.duigraha@gmail.com
+              </a>
+            </div>
+            <div className="flex flex-col items-center">
+              <h3 className="font-semibold mb-2 text-light">Phone</h3>
+              <a href="tel:+6281213858586" className="text-muted hover:text-light transition-colors">
+                +62 812 1385 8586
+              </a>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Footer */}
       <Footer />
