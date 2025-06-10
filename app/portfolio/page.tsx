@@ -25,7 +25,7 @@ const portfolioItems = [
     type: "Web Application",
     status: "Live",
     fallbackStats: {
-      stars: 0,
+      stars: 2,
       forks: 0,
       language: "JavaScript",
     },
@@ -45,7 +45,7 @@ const portfolioItems = [
     type: "Landing Page",
     status: "Live",
     fallbackStats: {
-      stars: 0,
+      stars: 1,
       forks: 0,
       language: "JavaScript",
     },
@@ -65,7 +65,7 @@ const portfolioItems = [
     type: "Portfolio Website",
     status: "Live",
     fallbackStats: {
-      stars: 0,
+      stars: 1,
       forks: 0,
       language: "TypeScript",
     },
@@ -85,7 +85,7 @@ const portfolioItems = [
     type: "Single Page Application",
     status: "Live",
     fallbackStats: {
-      stars: 0,
+      stars: 1,
       forks: 0,
       language: "JavaScript",
     },
@@ -98,14 +98,14 @@ const portfolioItems = [
     image: "/images/projects/marvel-dictionary.jpg",
     mainTechnology: "React.js",
     technologies: ["React.js", "Redux", "Single Page Application", "Create React App"],
-    featured: false,
+    featured: true,
     demoUrl: "https://marvel-directory.firebaseapp.com/",
     githubUrl: "https://github.com/kenduigraha/portofolio-multiple-SPA",
     year: "2018",
     type: "Single Page Application",
     status: "Live",
     fallbackStats: {
-      stars: 0,
+      stars: 2,
       forks: 0,
       language: "JavaScript",
     },
