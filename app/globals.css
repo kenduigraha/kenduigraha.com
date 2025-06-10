@@ -13,8 +13,8 @@
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-light);
+  background-color: #0d0d1f;
+  color: #ffffff;
 }
 
 @layer base {
