@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Footer from "@/components/footer"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -148,37 +149,7 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-bg py-8 px-6">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-2 text-light">Ken D. Putra</h3>
-              <p className="text-sm text-muted">ken.duigraha@gmail.com</p>
-            </div>
-
-            <div className="text-center">
-              <h3 className="font-semibold mb-4 text-light">QUICK LINKS</h3>
-              <div className="flex flex-col space-y-2">
-                <Link href="/" className="text-muted hover:text-light transition-colors text-sm">
-                  Home
-                </Link>
-                <Link href="/contact" className="text-muted hover:text-light transition-colors text-sm">
-                  Contact
-                </Link>
-                <Link href="/portfolio" className="text-muted hover:text-light transition-colors text-sm">
-                  Portfolio
-                </Link>
-              </div>
-            </div>
-
-            <div className="text-center md:text-right">
-              <h3 className="font-semibold mb-4 text-light">CONTACT ME</h3>
-              <p className="text-sm text-muted mb-2">ken.duigraha@gmail.com</p>
-              <p className="text-sm text-muted">+62 812 1385 8586</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
