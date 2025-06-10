@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { TooltipProvider } from "@/components/ui/tooltip"
 import TechStackIcon from "@/components/tech-stack-icon"
 import Footer from "@/components/footer"
 
@@ -108,27 +107,25 @@ export default function Home() {
       </section>
 
       {/* My Stack Section */}
-      <TooltipProvider>
-        <section className="py-20 px-6 bg-bg">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-light">My Stack</h2>
-            <div className="mb-12">
-              <h3 className="text-sm font-semibold mb-12 text-muted tracking-wider">FRONTEND</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 max-w-4xl mx-auto">
-                <TechStackIcon src="/icons/tech/nodejs.svg" alt="Node.js" name="Node.js" />
-                <TechStackIcon src="/icons/tech/reactjs.svg" alt="React" name="React" />
-                <TechStackIcon src="/icons/tech/tailwindcss.svg" alt="Tailwind CSS" name="Tailwind CSS" />
-                <TechStackIcon src="/icons/tech/redux.svg" alt="Redux" name="Redux" />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-lg mx-auto">
-                <TechStackIcon src="/icons/tech/html5.svg" alt="HTML5" name="HTML5" />
-                <TechStackIcon src="/icons/tech/css3.svg" alt="CSS3" name="CSS3" />
-                <TechStackIcon src="/icons/tech/javascript.svg" alt="JavaScript" name="JavaScript" />
-              </div>
+      <section className="py-20 px-6 bg-bg">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4 text-light">My Stack</h2>
+          <div className="mb-12">
+            <h3 className="text-sm font-semibold mb-12 text-muted tracking-wider">FRONTEND</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 max-w-4xl mx-auto">
+              <TechStackIcon src="/icons/tech/nodejs.svg" alt="Node.js" name="Node.js" />
+              <TechStackIcon src="/icons/tech/reactjs.svg" alt="React" name="React" />
+              <TechStackIcon src="/icons/tech/tailwindcss.svg" alt="Tailwind CSS" name="Tailwind CSS" />
+              <TechStackIcon src="/icons/tech/redux.png" alt="Redux" name="Redux" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-lg mx-auto">
+              <TechStackIcon src="/icons/tech/html5.svg" alt="HTML5" name="HTML5" />
+              <TechStackIcon src="/icons/tech/css3.svg" alt="CSS3" name="CSS3" />
+              <TechStackIcon src="/icons/tech/javascript.svg" alt="JavaScript" name="JavaScript" />
             </div>
           </div>
-        </section>
-      </TooltipProvider>
+        </div>
+      </section>
 
       {/* My Experience Section */}
       <section className="py-20 px-6 bg-gray-100">
