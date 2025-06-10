@@ -187,9 +187,10 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  ;<Footer />
-  </div>
-)
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  )
 }
