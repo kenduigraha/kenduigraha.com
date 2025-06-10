@@ -150,6 +150,26 @@ const portfolioItems = [
       language: "Vue",
     },
   },
+  {
+    id: 8,
+    title: "COPTAH Analyzer",
+    description:
+      "Professional trading analysis tool designed for forex traders using the COPTAH (Company Owner Program Trading And Help) system. Features drag-and-drop screenshot upload functionality, multi-timeframe analysis, and comprehensive data visualization. The application processes COPTAH FERRARI indicator data from MT4 platforms, providing traders with detailed analysis across multiple currency pairs and timeframes.",
+    image: "/images/projects/coptah-analyzer.jpg",
+    mainTechnology: "React.js",
+    technologies: ["React.js", "File Upload", "Data Visualization", "Trading Analysis"],
+    featured: true,
+    demoUrl: "https://coptah.kenduigraha.com/",
+    githubUrl: null,
+    year: "2025",
+    type: "Trading Tool",
+    status: "Live",
+    fallbackStats: {
+      stars: 0,
+      forks: 0,
+      language: "JavaScript",
+    },
+  },
 ]
 
 const technologyFilters = ["All Technologies", "React.js", "Vue.js", "Node.js"]
