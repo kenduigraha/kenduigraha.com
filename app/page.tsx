@@ -27,18 +27,32 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="px-6 pb-20 pt-8 lg:px-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-            {/* Text Content - Left Side */}
-            <div className="flex-1 max-w-2xl">
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+            {/* Profile Image - Top */}
+            <div className="mb-8">
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-light/20">
+                <Image
+                  src="/images/kenduigraha.jpg"
+                  alt="Ken Duigraha Putra"
+                  width={384}
+                  height={384}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Text Content - Below */}
+            <div>
               <p className="text-muted mb-2 text-base">Hi, my name is</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-light leading-tight mb-6">
                 Ken Duigraha Putra
               </h1>
-              <p className="text-muted text-base md:text-lg leading-relaxed mb-8">
+              <p className="text-muted text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
                 A Professional Frontend Engineer with 6+ years of experience in building high-performance, scalable, and
                 responsive web solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   variant="outline"
                   size="lg"
@@ -52,20 +66,6 @@ export default function Home() {
                 >
                   View Portfolio
                 </Button>
-              </div>
-            </div>
-
-            {/* Profile Image - Right Side */}
-            <div className="flex-shrink-0">
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-light/20">
-                <Image
-                  src="/images/kenduigraha.jpg"
-                  alt="Ken Duigraha Putra"
-                  width={384}
-                  height={384}
-                  className="w-full h-full object-cover"
-                  priority
-                />
               </div>
             </div>
           </div>
