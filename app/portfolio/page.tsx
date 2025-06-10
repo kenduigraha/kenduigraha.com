@@ -341,17 +341,16 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center p-6 bg-gray-50 rounded-lg">
                 <div className="w-16 h-16 mx-auto mb-4">
-                  <Image src="/icons/tech/reactjs-logo.png" alt="React.js" width={64} height={64} />
+                  <Image src="/icons/tech/reactjs.svg" alt="React.js" width={64} height={64} />
                 </div>
                 <h3 className="font-bold text-lg mb-2">React.js</h3>
                 <p className="text-gray-600 text-sm">
-                  Modern React development with hooks, context, and state management. Experience with Next.js and React
-                  Native.
+                  Modern React development with hooks, context, and state management. Experience with Next.js.
                 </p>
               </div>
               <div className="text-center p-6 bg-gray-50 rounded-lg">
                 <div className="w-16 h-16 mx-auto mb-4">
-                  <Image src="/icons/tech/vuejs-logo.png" alt="Vue.js" width={64} height={64} />
+                  <Image src="/icons/tech/vuejs.svg" alt="Vue.js" width={64} height={64} />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Vue.js</h3>
                 <p className="text-gray-600 text-sm">
@@ -361,7 +360,7 @@ export default function Portfolio() {
               </div>
               <div className="text-center p-6 bg-gray-50 rounded-lg">
                 <div className="w-16 h-16 mx-auto mb-4">
-                  <Image src="/icons/tech/nodejs-logo.png" alt="Node.js" width={64} height={64} />
+                  <Image src="/icons/tech/nodejs.svg" alt="Node.js" width={64} height={64} />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Node.js</h3>
                 <p className="text-gray-600 text-sm">
