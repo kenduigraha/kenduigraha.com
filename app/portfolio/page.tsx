@@ -212,16 +212,12 @@ export default function Portfolio() {
               Showcasing expertise in modern web technologies including React.js, Vue.js, and Node.js with a focus on
               scalable, performant applications.
             </p>
-            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span>Real-time GitHub stats</span>
-            </div>
           </div>
 
           {/* Technology Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-2xl mx-auto">
             {technologyFilters.map((tech) => (
-              <div key={tech} className="text-center p-4 bg-gray-50 rounded-lg">
+              <div key={tech} className="flex flex-col justify-center text-center p-4 bg-gray-50 rounded-lg">
                 {tech !== "All Technologies" && (
                   <div className="w-12 h-12 mx-auto mb-2">
                     <Image
