@@ -33,7 +33,7 @@ export default function Home() {
             <div className="order-1">
               <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-light/20">
                 <Image
-                  src="/images/kenduigraha.png"
+                  src="/images/kenduigraha.jpg"
                   alt="Ken Duigraha Putra"
                   width={160}
                   height={160}
