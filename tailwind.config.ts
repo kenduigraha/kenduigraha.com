@@ -19,12 +19,16 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Outfit", "sans-serif"],
+      },
       colors: {
-        navy: "#000235",
-        teal: "#29abe2",
-        darkBg: "#1E1E1E", // The correct background color from Figma
-        lightGray: "#ebebeb",
-        darkGray: "#2e2e2e",
+        bg: "#0d0d1f",
+        bgblue: "#2B71A7",
+        light: "#ffffff",
+        accent: "#00c2ff",
+        muted: "#ccc",
+        bluesky: "#2298BD",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

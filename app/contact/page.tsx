@@ -47,17 +47,17 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-darkBg px-6 py-6 lg:px-12">
+      <header className="bg-bg px-6 py-6 lg:px-12">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-semibold text-white">Ken D. Putra</div>
+          <div className="text-xl font-semibold text-light">Ken D. Putra</div>
           <nav className="flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-gray-300 transition-colors">
+            <Link href="/" className="text-light hover:text-accent transition-colors">
               Home
             </Link>
-            <Link href="/portfolio" className="text-white hover:text-gray-300 transition-colors">
+            <Link href="/portfolio" className="text-light hover:text-accent transition-colors">
               Portfolio
             </Link>
-            <Link href="/contact" className="text-white font-semibold">
+            <Link href="/contact" className="text-accent font-semibold">
               Contact
             </Link>
           </nav>
@@ -65,9 +65,9 @@ export default function Contact() {
       </header>
 
       {/* Contact Form */}
-      <div className="bg-white py-20 px-6">
+      <div className="bg-light py-20 px-6">
         <div className="container mx-auto max-w-2xl">
-          <h1 className="text-4xl font-bold mb-12 text-center text-navy">Contact me</h1>
+          <h1 className="text-4xl font-bold mb-12 text-center text-bg">Contact me</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -79,7 +79,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="First Name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent"
                 />
               </div>
               <div>
@@ -90,7 +90,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Last Name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent"
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Email"
                 required
-                className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+                className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent"
               />
             </div>
 
@@ -114,7 +114,7 @@ export default function Contact() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Phone Number"
-                className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+                className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent"
               />
             </div>
 
@@ -126,7 +126,7 @@ export default function Contact() {
                 placeholder="Message"
                 required
                 rows={6}
-                className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent resize-none"
+                className="w-full px-4 py-3 rounded-md border border-gray-300 text-bg focus:outline-none focus:ring-2 focus:ring-bluesky focus:border-transparent resize-none"
               ></textarea>
             </div>
 
@@ -134,7 +134,7 @@ export default function Contact() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-teal hover:bg-teal/90 text-white px-12 py-3 rounded-md text-lg"
+                className="bg-bluesky hover:bg-bluesky/90 text-light px-12 py-3 rounded-md text-lg"
               >
                 {isSubmitting ? "Sending..." : "Send"}
               </Button>
@@ -148,33 +148,33 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-darkBg py-8 px-6">
+      <footer className="bg-bg py-8 px-6">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-2 text-white">Ken D. Putra</h3>
-              <p className="text-sm text-white/70">ken.duigraha@gmail.com</p>
+              <h3 className="text-xl font-semibold mb-2 text-light">Ken D. Putra</h3>
+              <p className="text-sm text-muted">ken.duigraha@gmail.com</p>
             </div>
 
             <div className="text-center">
-              <h3 className="font-semibold mb-4 text-white">QUICK LINKS</h3>
+              <h3 className="font-semibold mb-4 text-light">QUICK LINKS</h3>
               <div className="flex flex-col space-y-2">
-                <Link href="/" className="text-white/70 hover:text-white transition-colors text-sm">
+                <Link href="/" className="text-muted hover:text-light transition-colors text-sm">
                   Home
                 </Link>
-                <Link href="/contact" className="text-white/70 hover:text-white transition-colors text-sm">
+                <Link href="/contact" className="text-muted hover:text-light transition-colors text-sm">
                   Contact
                 </Link>
-                <Link href="/portfolio" className="text-white/70 hover:text-white transition-colors text-sm">
+                <Link href="/portfolio" className="text-muted hover:text-light transition-colors text-sm">
                   Portfolio
                 </Link>
               </div>
             </div>
 
             <div className="text-center md:text-right">
-              <h3 className="font-semibold mb-4 text-white">CONTACT ME</h3>
-              <p className="text-sm text-white/70 mb-2">ken.duigraha@gmail.com</p>
-              <p className="text-sm text-white/70">+62 812 3456 7890</p>
+              <h3 className="font-semibold mb-4 text-light">CONTACT ME</h3>
+              <p className="text-sm text-muted mb-2">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-muted">+62 812 3456 7890</p>
             </div>
           </div>
         </div>
