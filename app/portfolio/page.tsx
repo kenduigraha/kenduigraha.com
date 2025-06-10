@@ -143,7 +143,7 @@ const portfolioItems = [
     githubUrl: "https://github.com/kenduigraha/moovieTime",
     year: "2025",
     type: "Web Application",
-    status: "Development",
+    status: "Live",
     fallbackStats: {
       stars: 0,
       forks: 0,
