@@ -22,7 +22,8 @@ const config = {
       colors: {
         navy: "#000235",
         teal: "#29abe2",
-        lightGray: "#e6e6e6",
+        lavender: "#c4c4d6", // The light purple-gray from Figma
+        lightGray: "#ebebeb",
         darkGray: "#2e2e2e",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
