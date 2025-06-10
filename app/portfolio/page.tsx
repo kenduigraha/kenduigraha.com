@@ -13,17 +13,17 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-lavender px-6 py-6 lg:px-12">
+      <header className="bg-darkBg px-6 py-6 lg:px-12">
         <div className="flex items-center justify-between">
           <div className="text-xl font-semibold text-white">Ken D. Putra</div>
           <nav className="flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-gray-200 transition-colors">
+            <Link href="/" className="text-white hover:text-gray-300 transition-colors">
               Home
             </Link>
             <Link href="/portfolio" className="text-white font-semibold">
               Portfolio
             </Link>
-            <Link href="/contact" className="text-white hover:text-gray-200 transition-colors">
+            <Link href="/contact" className="text-white hover:text-gray-300 transition-colors">
               Contact
             </Link>
           </nav>
@@ -52,24 +52,24 @@ export default function Portfolio() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-lavender py-8 px-6">
+      <footer className="bg-darkBg py-8 px-6">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-2 text-white">Ken D. Putra</h3>
-              <p className="text-sm text-white/80">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-white/70">ken.duigraha@gmail.com</p>
             </div>
 
             <div className="text-center">
               <h3 className="font-semibold mb-4 text-white">QUICK LINKS</h3>
               <div className="flex flex-col space-y-2">
-                <Link href="/" className="text-white/80 hover:text-white transition-colors text-sm">
+                <Link href="/" className="text-white/70 hover:text-white transition-colors text-sm">
                   Home
                 </Link>
-                <Link href="/contact" className="text-white/80 hover:text-white transition-colors text-sm">
+                <Link href="/contact" className="text-white/70 hover:text-white transition-colors text-sm">
                   Contact
                 </Link>
-                <Link href="/portfolio" className="text-white/80 hover:text-white transition-colors text-sm">
+                <Link href="/portfolio" className="text-white/70 hover:text-white transition-colors text-sm">
                   Portfolio
                 </Link>
               </div>
@@ -77,8 +77,8 @@ export default function Portfolio() {
 
             <div className="text-center md:text-right">
               <h3 className="font-semibold mb-4 text-white">CONTACT ME</h3>
-              <p className="text-sm text-white/80 mb-2">ken.duigraha@gmail.com</p>
-              <p className="text-sm text-white/80">+62 812 3456 7890</p>
+              <p className="text-sm text-white/70 mb-2">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-white/70">+62 812 3456 7890</p>
             </div>
           </div>
         </div>

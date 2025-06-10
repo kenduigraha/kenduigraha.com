@@ -5,20 +5,20 @@ import { Button } from "@/components/ui/button"
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Header & Hero Section - Same background */}
-      <section className="bg-lavender">
+      {/* Header & Hero Section - Dark background */}
+      <section className="bg-darkBg">
         {/* Header */}
         <header className="px-6 py-6 lg:px-12">
           <div className="flex items-center justify-between">
             <div className="text-xl font-semibold text-white">Ken D. Putra</div>
             <nav className="flex items-center space-x-8">
-              <Link href="/" className="text-white hover:text-gray-200 transition-colors">
+              <Link href="/" className="text-white hover:text-gray-300 transition-colors">
                 Home
               </Link>
-              <Link href="/portfolio" className="text-white hover:text-gray-200 transition-colors">
+              <Link href="/portfolio" className="text-white hover:text-gray-300 transition-colors">
                 Portfolio
               </Link>
-              <Link href="/contact" className="text-white hover:text-gray-200 transition-colors">
+              <Link href="/contact" className="text-white hover:text-gray-300 transition-colors">
                 Contact
               </Link>
             </nav>
@@ -28,14 +28,14 @@ export default function Home() {
         {/* Hero Content */}
         <div className="px-6 pb-20 pt-8 lg:px-12">
           <div className="max-w-2xl">
-            <p className="text-white/80 mb-2">Hi, my name is</p>
+            <p className="text-white/70 mb-2">Hi, my name is</p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">Ken Duigraha Putra</h1>
-            <p className="text-white/90 text-lg mb-8 leading-relaxed">
+            <p className="text-white/80 text-lg mb-8 leading-relaxed">
               A Professional Frontend Engineer with 6+ years of experience in building high-performance, scalable, and
               responsive web solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="outline" size="lg" className="bg-white text-navy border-white hover:bg-gray-100">
+              <Button variant="outline" size="lg" className="bg-white text-darkBg border-white hover:bg-gray-100">
                 Hire Me
               </Button>
               <Button size="lg" className="bg-teal hover:bg-teal/90 text-white">
@@ -67,11 +67,11 @@ export default function Home() {
       </section>
 
       {/* My Stack Section */}
-      <section className="py-20 px-6 bg-lavender">
+      <section className="py-20 px-6 bg-darkBg">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-white">My Stack</h2>
           <div className="mb-12">
-            <h3 className="text-sm font-semibold mb-12 text-white/80 tracking-wider">FRONTEND</h3>
+            <h3 className="text-sm font-semibold mb-12 text-white/60 tracking-wider">FRONTEND</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 max-w-2xl mx-auto">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
@@ -182,24 +182,24 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-lavender py-8 px-6">
+      <footer className="bg-darkBg py-8 px-6">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-2 text-white">Ken D. Putra</h3>
-              <p className="text-sm text-white/80">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-white/70">ken.duigraha@gmail.com</p>
             </div>
 
             <div className="text-center">
               <h3 className="font-semibold mb-4 text-white">QUICK LINKS</h3>
               <div className="flex flex-col space-y-2">
-                <Link href="/" className="text-white/80 hover:text-white transition-colors text-sm">
+                <Link href="/" className="text-white/70 hover:text-white transition-colors text-sm">
                   Home
                 </Link>
-                <Link href="/contact" className="text-white/80 hover:text-white transition-colors text-sm">
+                <Link href="/contact" className="text-white/70 hover:text-white transition-colors text-sm">
                   Contact
                 </Link>
-                <Link href="/portfolio" className="text-white/80 hover:text-white transition-colors text-sm">
+                <Link href="/portfolio" className="text-white/70 hover:text-white transition-colors text-sm">
                   Portfolio
                 </Link>
               </div>
@@ -207,8 +207,8 @@ export default function Home() {
 
             <div className="text-center md:text-right">
               <h3 className="font-semibold mb-4 text-white">CONTACT ME</h3>
-              <p className="text-sm text-white/80 mb-2">ken.duigraha@gmail.com</p>
-              <p className="text-sm text-white/80">+62 812 3456 7890</p>
+              <p className="text-sm text-white/70 mb-2">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-white/70">+62 812 3456 7890</p>
             </div>
           </div>
         </div>
