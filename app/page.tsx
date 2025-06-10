@@ -5,20 +5,20 @@ import { Button } from "@/components/ui/button"
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Header & Hero Section - Dark background */}
+      {/* Header & Hero Section */}
       <section className="bg-bg">
         {/* Header */}
         <header className="px-6 py-6 lg:px-12">
           <div className="flex items-center justify-between">
             <div className="text-xl font-semibold text-light">Ken D. Putra</div>
             <nav className="flex items-center space-x-8">
-              <Link href="/" className="text-light hover:text-accent transition-colors">
+              <Link href="/" className="text-light hover:text-muted transition-colors">
                 Home
               </Link>
-              <Link href="/portfolio" className="text-light hover:text-accent transition-colors">
+              <Link href="/portfolio" className="text-light hover:text-muted transition-colors">
                 Portfolio
               </Link>
-              <Link href="/contact" className="text-light hover:text-accent transition-colors">
+              <Link href="/contact" className="text-light hover:text-muted transition-colors">
                 Contact
               </Link>
             </nav>
@@ -28,14 +28,14 @@ export default function Home() {
         {/* Hero Content */}
         <div className="px-6 pb-20 pt-8 lg:px-12">
           <div className="max-w-2xl">
-            <p className="text-light/70 mb-2">Hi, my name is</p>
+            <p className="text-muted mb-2">Hi, my name is</p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-light leading-tight">Ken Duigraha Putra</h1>
-            <p className="text-light/80 text-lg mb-8 leading-relaxed">
+            <p className="text-muted text-lg mb-8 leading-relaxed">
               A Professional Frontend Engineer with 6+ years of experience in building high-performance, scalable, and
               responsive web solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="outline" size="lg" className="bg-light text-bg border-light hover:bg-light/90">
+              <Button variant="outline" size="lg" className="bg-light text-bg border-light hover:bg-muted">
                 Hire Me
               </Button>
               <Button size="lg" className="bg-bluesky hover:bg-bluesky/90 text-light">
@@ -47,7 +47,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-bgblue py-16">
+      <section className="bg-gradient-to-r from-bgblue to-bluesky py-16">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-light">
             <div>
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-light">My Stack</h2>
           <div className="mb-12">
-            <h3 className="text-sm font-semibold mb-12 text-light/60 tracking-wider">FRONTEND</h3>
+            <h3 className="text-sm font-semibold mb-12 text-muted tracking-wider">FRONTEND</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 max-w-2xl mx-auto">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
@@ -154,13 +154,13 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center gap-16 mb-12">
           <div className="flex flex-col items-center">
             <h3 className="font-semibold mb-2">Email</h3>
-            <a href="mailto:ken.duigraha@gmail.com" className="text-gray-300 hover:text-light">
+            <a href="mailto:ken.duigraha@gmail.com" className="text-muted hover:text-light">
               ken.duigraha@gmail.com
             </a>
           </div>
           <div className="flex flex-col items-center">
             <h3 className="font-semibold mb-2">Phone</h3>
-            <a href="tel:+6281234567890" className="text-gray-300 hover:text-light">
+            <a href="tel:+6281234567890" className="text-muted hover:text-light">
               +62 812 3456 7890
             </a>
           </div>
@@ -168,13 +168,13 @@ export default function Home() {
         <div>
           <h3 className="font-semibold mb-6">Socials</h3>
           <div className="flex justify-center space-x-8">
-            <Link href="https://github.com" className="hover:text-accent transition-colors">
+            <Link href="https://github.com" className="hover:text-muted transition-colors">
               <Image src="/placeholder.svg?height=32&width=32" alt="GitHub" width={32} height={32} />
             </Link>
-            <Link href="https://linkedin.com" className="hover:text-accent transition-colors">
+            <Link href="https://linkedin.com" className="hover:text-muted transition-colors">
               <Image src="/placeholder.svg?height=32&width=32" alt="LinkedIn" width={32} height={32} />
             </Link>
-            <Link href="https://twitter.com" className="hover:text-accent transition-colors">
+            <Link href="https://twitter.com" className="hover:text-muted transition-colors">
               <Image src="/placeholder.svg?height=32&width=32" alt="Tumblr" width={32} height={32} />
             </Link>
           </div>
@@ -187,19 +187,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-2 text-light">Ken D. Putra</h3>
-              <p className="text-sm text-light/70">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-muted">ken.duigraha@gmail.com</p>
             </div>
 
             <div className="text-center">
               <h3 className="font-semibold mb-4 text-light">QUICK LINKS</h3>
               <div className="flex flex-col space-y-2">
-                <Link href="/" className="text-light/70 hover:text-accent transition-colors text-sm">
+                <Link href="/" className="text-muted hover:text-light transition-colors text-sm">
                   Home
                 </Link>
-                <Link href="/contact" className="text-light/70 hover:text-accent transition-colors text-sm">
+                <Link href="/contact" className="text-muted hover:text-light transition-colors text-sm">
                   Contact
                 </Link>
-                <Link href="/portfolio" className="text-light/70 hover:text-accent transition-colors text-sm">
+                <Link href="/portfolio" className="text-muted hover:text-light transition-colors text-sm">
                   Portfolio
                 </Link>
               </div>
@@ -207,8 +207,8 @@ export default function Home() {
 
             <div className="text-center md:text-right">
               <h3 className="font-semibold mb-4 text-light">CONTACT ME</h3>
-              <p className="text-sm text-light/70 mb-2">ken.duigraha@gmail.com</p>
-              <p className="text-sm text-light/70">+62 812 3456 7890</p>
+              <p className="text-sm text-muted mb-2">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-muted">+62 812 3456 7890</p>
             </div>
           </div>
         </div>

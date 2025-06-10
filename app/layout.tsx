@@ -3,11 +3,7 @@ import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
 import "./globals.css"
 
-// Load Outfit font
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-})
+const outfit = Outfit({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Ken Duigraha Putra | Frontend Engineer",
@@ -22,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} font-outfit bg-bg text-light`}>{children}</body>
+      <body className={outfit.className}>{children}</body>
     </html>
   )
 }

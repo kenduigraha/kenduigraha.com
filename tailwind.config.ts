@@ -19,8 +19,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        outfit: ["Outfit", "sans-serif"],
+      },
       colors: {
-        // Custom color scheme
         bg: "#0d0d1f",
         bgblue: "#2B71A7",
         light: "#ffffff",
@@ -60,9 +62,6 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-      },
-      fontFamily: {
-        outfit: ["var(--font-outfit)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
