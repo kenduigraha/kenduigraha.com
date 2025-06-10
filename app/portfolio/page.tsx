@@ -2,34 +2,87 @@ import Link from "next/link"
 
 export default function Portfolio() {
   const portfolioItems = [
-    { id: 1, title: "Project 1", description: "Name of Portfolio" },
-    { id: 2, title: "Project 2", description: "Name of Portfolio" },
-    { id: 3, title: "Project 3", description: "Name of Portfolio" },
-    { id: 4, title: "Project 4", description: "Name of Portfolio" },
-    { id: 5, title: "Project 5", description: "Name of Portfolio" },
-    { id: 6, title: "Project 6", description: "Name of Portfolio" },
+    { id: 1, title: "Title", description: "Name of Portfolio" },
+    { id: 2, title: "Title", description: "Name of Portfolio" },
+    { id: 3, title: "Title", description: "Name of Portfolio" },
+    { id: 4, title: "Title", description: "Name of Portfolio" },
+    { id: 5, title: "Title", description: "Name of Portfolio" },
+    { id: 6, title: "Title", description: "Name of Portfolio" },
   ]
 
   return (
-    <div className="bg-gray-100 py-20 px-6 min-h-screen">
-      <div className="container mx-auto">
-        <h1 className="text-4xl font-bold mb-12 text-center text-navy">My Portfolio</h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioItems.map((item) => (
-            <Link
-              key={item.id}
-              href={`/portfolio/${item.id}`}
-              className="block bg-teal text-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div className="p-6 h-48 flex flex-col justify-center items-center text-center">
-                <h2 className="text-xl font-semibold mb-2">Title</h2>
-                <p>Name of Portfolio</p>
-              </div>
+    <div className="min-h-screen">
+      {/* Header */}
+      <header className="bg-lightGray px-6 py-4 lg:px-12">
+        <div className="flex items-center justify-between">
+          <div className="text-xl font-semibold text-navy">Ken D. Putra</div>
+          <nav className="flex items-center space-x-8">
+            <Link href="/" className="text-navy hover:text-teal transition-colors">
+              Home
             </Link>
-          ))}
+            <Link href="/portfolio" className="text-teal font-semibold">
+              Portfolio
+            </Link>
+            <Link href="/contact" className="text-navy hover:text-teal transition-colors">
+              Contact
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      {/* Portfolio Content */}
+      <div className="bg-white py-20 px-6">
+        <div className="container mx-auto">
+          <h1 className="text-4xl font-bold mb-12 text-center text-navy">My Portfolio</h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {portfolioItems.map((item) => (
+              <div
+                key={item.id}
+                className="bg-teal text-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              >
+                <div className="p-8 h-48 flex flex-col justify-center items-center text-center">
+                  <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                  <p className="text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-lightGray py-8 px-6">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-navy">Ken D. Putra</h3>
+              <p className="text-sm text-darkGray">Frontend Web Developer</p>
+            </div>
+
+            <div className="text-center">
+              <h3 className="font-semibold mb-2 text-navy">Quick Links</h3>
+              <div className="flex flex-col space-y-1">
+                <Link href="/" className="text-darkGray hover:text-teal transition-colors text-sm">
+                  Home
+                </Link>
+                <Link href="/portfolio" className="text-darkGray hover:text-teal transition-colors text-sm">
+                  Portfolio
+                </Link>
+                <Link href="/contact" className="text-darkGray hover:text-teal transition-colors text-sm">
+                  Contact
+                </Link>
+              </div>
+            </div>
+
+            <div className="text-center md:text-right">
+              <h3 className="font-semibold mb-2 text-navy">Contact</h3>
+              <p className="text-sm text-darkGray mb-1">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-darkGray">+62 (0123) 456789</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

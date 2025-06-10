@@ -21,7 +21,9 @@ const config = {
     extend: {
       colors: {
         navy: "#000235",
-        teal: "#2298bd",
+        teal: "#29abe2",
+        lightGray: "#e6e6e6",
+        darkGray: "#2e2e2e",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export default function Contact() {
@@ -45,86 +45,140 @@ export default function Contact() {
   }
 
   return (
-    <div className="py-20 px-6">
-      <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold mb-12 text-center">Contact me</h1>
+    <div className="min-h-screen">
+      {/* Header */}
+      <header className="bg-lightGray px-6 py-4 lg:px-12">
+        <div className="flex items-center justify-between">
+          <div className="text-xl font-semibold text-navy">Ken D. Putra</div>
+          <nav className="flex items-center space-x-8">
+            <Link href="/" className="text-navy hover:text-teal transition-colors">
+              Home
+            </Link>
+            <Link href="/portfolio" className="text-navy hover:text-teal transition-colors">
+              Portfolio
+            </Link>
+            <Link href="/contact" className="text-teal font-semibold">
+              Contact
+            </Link>
+          </nav>
+        </div>
+      </header>
 
-        <form onSubmit={handleSubmit} className="bg-navy-light p-8 rounded-lg shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      {/* Contact Form */}
+      <div className="bg-white py-20 px-6">
+        <div className="container mx-auto max-w-2xl">
+          <h1 className="text-4xl font-bold mb-12 text-center text-navy">Contact me</h1>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="First Name"
+                  required
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Last Name"
+                  required
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+                />
+              </div>
+            </div>
+
             <div>
               <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
+                type="email"
+                name="email"
+                value={formData.email}
                 onChange={handleChange}
-                placeholder="First Name"
+                placeholder="Email"
                 required
-                className="w-full px-4 py-3 rounded-md bg-navy border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-teal"
+                className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
               />
             </div>
+
             <div>
               <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
+                type="tel"
+                name="phone"
+                value={formData.phone}
                 onChange={handleChange}
-                placeholder="Last Name"
-                required
-                className="w-full px-4 py-3 rounded-md bg-navy border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-teal"
+                placeholder="Phone Number"
+                className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
               />
             </div>
-          </div>
 
-          <div className="mb-6">
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email"
-              required
-              className="w-full px-4 py-3 rounded-md bg-navy border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-teal"
-            />
-          </div>
+            <div>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Message"
+                required
+                rows={6}
+                className="w-full px-4 py-3 rounded-md border border-gray-300 text-navy focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent resize-none"
+              ></textarea>
+            </div>
 
-          <div className="mb-6">
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Phone Number"
-              className="w-full px-4 py-3 rounded-md bg-navy border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-teal"
-            />
-          </div>
+            <div className="text-center">
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-teal hover:bg-teal/90 text-white px-12 py-3 rounded-md text-lg"
+              >
+                {isSubmitting ? "Sending..." : "Send"}
+              </Button>
 
-          <div className="mb-6">
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Message"
-              required
-              rows={5}
-              className="w-full px-4 py-3 rounded-md bg-navy border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-teal"
-            ></textarea>
-          </div>
-
-          <div className="text-center">
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="bg-teal hover:bg-teal/90 text-white px-8 py-3 rounded-md"
-            >
-              {isSubmitting ? "Sending..." : "Send"}
-            </Button>
-
-            {isSubmitted && (
-              <p className="mt-4 text-green-400">Thank you for your message! I'll get back to you soon.</p>
-            )}
-          </div>
-        </form>
+              {isSubmitted && (
+                <p className="mt-4 text-green-600">Thank you for your message! I'll get back to you soon.</p>
+              )}
+            </div>
+          </form>
+        </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-lightGray py-8 px-6">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-navy">Ken D. Putra</h3>
+              <p className="text-sm text-darkGray">Frontend Web Developer</p>
+            </div>
+
+            <div className="text-center">
+              <h3 className="font-semibold mb-2 text-navy">Quick Links</h3>
+              <div className="flex flex-col space-y-1">
+                <Link href="/" className="text-darkGray hover:text-teal transition-colors text-sm">
+                  Home
+                </Link>
+                <Link href="/portfolio" className="text-darkGray hover:text-teal transition-colors text-sm">
+                  Portfolio
+                </Link>
+                <Link href="/contact" className="text-darkGray hover:text-teal transition-colors text-sm">
+                  Contact
+                </Link>
+              </div>
+            </div>
+
+            <div className="text-center md:text-right">
+              <h3 className="font-semibold mb-2 text-navy">Contact</h3>
+              <p className="text-sm text-darkGray mb-1">ken.duigraha@gmail.com</p>
+              <p className="text-sm text-darkGray">+62 (0123) 456789</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
