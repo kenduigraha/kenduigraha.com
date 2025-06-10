@@ -180,13 +180,28 @@ export default function Home() {
         <div>
           <h3 className="font-semibold mb-6">Socials</h3>
           <div className="flex justify-center space-x-8">
-            <Link href="https://github.com" className="hover:text-muted transition-colors">
+            <Link
+              href="https://github.com/kenduigraha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
               <Image src="/icons/social/github.svg" alt="GitHub" width={32} height={32} />
             </Link>
-            <Link href="https://linkedin.com" className="hover:text-muted transition-colors">
-              <Image src="/icons/social/linkedin.svg" alt="LinkedIn" width={32} height={32} />
+            <Link
+              href="https://www.linkedin.com/in/kenduigraha/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <Image src="/icons/social/linkedin.png" alt="LinkedIn" width={32} height={32} />
             </Link>
-            <Link href="https://telegram.org" className="hover:text-muted transition-colors">
+            <Link
+              href="https://t.me/kenduigraha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
               <Image src="/icons/social/telegram.svg" alt="Telegram" width={32} height={32} />
             </Link>
           </div>
