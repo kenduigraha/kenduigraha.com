@@ -27,10 +27,10 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="px-6 pb-20 pt-8 lg:px-12">
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            {/* Profile Image - Top */}
-            <div className="mb-8">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-light/20">
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
+            {/* Profile Image - Always at Top */}
+            <div className="order-1">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-light/20">
                 <Image
                   src="/images/kenduigraha.jpg"
                   alt="Ken Duigraha Putra"
@@ -42,17 +42,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Text Content - Below */}
-            <div>
-              <p className="text-muted mb-2 text-base">Hi, my name is</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-light leading-tight mb-6">
+            {/* Text Content - Always Below Image */}
+            <div className="order-2 space-y-6">
+              <p className="text-muted text-base">Hi, my name is</p>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-light leading-tight">
                 Ken Duigraha Putra
               </h1>
-              <p className="text-muted text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+              <p className="text-muted text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
                 A Professional Frontend Engineer with 6+ years of experience in building high-performance, scalable, and
                 responsive web solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button
                   variant="outline"
                   size="lg"
