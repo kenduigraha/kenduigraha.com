@@ -219,7 +219,7 @@ export default function Portfolio() {
                 {tech !== "All Technologies" && (
                   <div className="w-12 h-12 mx-auto mb-2">
                     <Image
-                      src={`/icons/tech/${tech.toLowerCase().replace(".", "")}-logo.svg`}
+                      src={`/icons/tech/${tech.toLowerCase().replace(".", "")}.svg`}
                       alt={tech}
                       width={48}
                       height={48}
