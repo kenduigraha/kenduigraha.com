@@ -146,8 +146,7 @@ export default function Contact() {
             <div className="flex justify-center">
               <ReCAPTCHA
                 ref={recaptchaRef}
-                sitekey="6LcEPVsrAAAAAMZe-aPzYucHcCLaToszJfsJhRgQ
-" // Replace with your actual site key
+                sitekey="6LcEPVsrAAAAAMZe-aPzYucHcCLaToszJfsJhRgQ" // Replace with your actual site key
                 onChange={onCaptchaChange}
                 theme="light"
               />
