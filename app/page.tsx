@@ -193,8 +193,8 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <h3 className="font-semibold mb-2">Phone</h3>
-            <a href="tel:+6281234567890" className="text-muted hover:text-light">
-              +62 812 3456 7890
+            <a href="tel:+6281213858586" className="text-muted hover:text-light">
+              +62 812 1385 8586
             </a>
           </div>
         </div>
@@ -241,7 +241,7 @@ export default function Home() {
             <div className="text-center md:text-right">
               <h3 className="font-semibold mb-4 text-light">CONTACT ME</h3>
               <p className="text-sm text-muted mb-2">ken.duigraha@gmail.com</p>
-              <p className="text-sm text-muted">+62 812 3456 7890</p>
+              <p className="text-sm text-muted">+62 812 1385 8586</p>
             </div>
           </div>
         </div>

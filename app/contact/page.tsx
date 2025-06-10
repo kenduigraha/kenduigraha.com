@@ -174,7 +174,7 @@ export default function Contact() {
             <div className="text-center md:text-right">
               <h3 className="font-semibold mb-4 text-light">CONTACT ME</h3>
               <p className="text-sm text-muted mb-2">ken.duigraha@gmail.com</p>
-              <p className="text-sm text-muted">+62 812 3456 7890</p>
+              <p className="text-sm text-muted">+62 812 1385 8586</p>
             </div>
           </div>
         </div>
