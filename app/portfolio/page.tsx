@@ -158,7 +158,7 @@ const portfolioItems = [
     image: "/images/projects/coptah-analyzer.jpg",
     mainTechnology: "React.js",
     technologies: ["React.js", "File Upload", "Data Visualization", "Trading Analysis"],
-    featured: true,
+    featured: false,
     demoUrl: "https://coptah.kenduigraha.com/",
     githubUrl: null,
     year: "2025",
