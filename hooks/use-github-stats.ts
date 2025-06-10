@@ -27,8 +27,9 @@ export function useGitHubStats(githubUrl: string | undefined) {
         const result = await fetchGitHubStats(githubUrl)
         setStats(result)
       } catch (err) {
-        setError("Failed to fetch GitHub stats")
-        console.error("GitHub stats error:", err)
+        // Don't set error for rate limiting, just silently fail
+        console.warn("GitHub stats fetch failed, using fallback data:", err)
+        setError(null) // Don't show error to user
       } finally {
         setLoading(false)
       }

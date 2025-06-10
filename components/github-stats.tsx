@@ -1,7 +1,7 @@
 "use client"
 
 import { useGitHubStats } from "@/hooks/use-github-stats"
-import { Star, GitFork, AlertCircle, Loader2 } from "lucide-react"
+import { Star, GitFork, Loader2 } from "lucide-react"
 
 interface GitHubStatsProps {
   githubUrl: string
@@ -27,13 +27,9 @@ export default function GitHubStats({ githubUrl, fallbackStats }: GitHubStatsPro
     )
   }
 
+  // Don't show error for rate limiting, just use fallback data
   if (error && !fallbackStats) {
-    return (
-      <div className="flex items-center gap-1 text-xs text-red-500">
-        <AlertCircle className="w-3 h-3" />
-        <span>Error</span>
-      </div>
-    )
+    return null
   }
 
   if (!displayStats) return null
@@ -48,8 +44,9 @@ export default function GitHubStats({ githubUrl, fallbackStats }: GitHubStatsPro
         <GitFork className="w-3 h-3" />
         {displayStats.forks}
       </div>
+      {/* Only show real-time indicator if we actually got live data */}
       {stats && (
-        <div className="text-xs text-gray-400" title="Real-time data">
+        <div className="text-xs text-green-500" title="Live GitHub data">
           ●
         </div>
       )}

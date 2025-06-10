@@ -33,9 +33,18 @@ export async function fetchGitHubStats(repoUrl: string): Promise<GitHubStats | n
           Authorization: `token ${process.env.GITHUB_TOKEN}`,
         }),
       },
-      // Cache for 5 minutes
-      next: { revalidate: 300 },
+      // Cache for 10 minutes to reduce API calls
+      next: { revalidate: 600 },
     })
+
+    // Handle rate limiting gracefully
+    if (response.status === 403) {
+      const rateLimitReset = response.headers.get("x-ratelimit-reset")
+      console.warn(
+        `GitHub API rate limit exceeded. Resets at: ${rateLimitReset ? new Date(Number.parseInt(rateLimitReset) * 1000) : "unknown"}`,
+      )
+      return null
+    }
 
     if (!response.ok) {
       console.warn(`Failed to fetch GitHub stats for ${owner}/${cleanRepo}:`, response.status)
