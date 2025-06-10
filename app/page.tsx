@@ -28,14 +28,14 @@ export default function Home() {
         {/* Hero Content */}
         <div className="px-6 pb-20 pt-8 lg:px-12">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
-            {/* Profile Image - Always at Top */}
+            {/* Profile Image - Always at Top - Half Size */}
             <div className="order-1">
-              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-light/20">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-light/20">
                 <Image
                   src="/images/kenduigraha.jpg"
                   alt="Ken Duigraha Putra"
-                  width={384}
-                  height={384}
+                  width={160}
+                  height={160}
                   className="w-full h-full object-cover"
                   priority
                 />
@@ -98,43 +98,50 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4 text-light">My Stack</h2>
           <div className="mb-12">
             <h3 className="text-sm font-semibold mb-12 text-muted tracking-wider">FRONTEND</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 max-w-2xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 max-w-4xl mx-auto">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="Node.js" width={64} height={64} />
+                  <Image src="/icons/nodejs.svg" alt="Node.js" width={64} height={64} />
                 </div>
+                <span className="text-muted text-sm">Node.js</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="React" width={64} height={64} />
+                  <Image src="/icons/reactjs.svg" alt="React" width={64} height={64} />
                 </div>
+                <span className="text-muted text-sm">React</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="Tailwind CSS" width={64} height={64} />
+                  <Image src="/icons/tailwindcss.svg" alt="Tailwind CSS" width={64} height={64} />
                 </div>
+                <span className="text-muted text-sm">Tailwind CSS</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="Next.js" width={64} height={64} />
+                  <Image src="/icons/redux.svg" alt="Redux" width={64} height={64} />
                 </div>
+                <span className="text-muted text-sm">Redux</span>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-lg mx-auto">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="HTML5" width={64} height={64} />
+                  <Image src="/icons/html5.svg" alt="HTML5" width={64} height={64} />
                 </div>
+                <span className="text-muted text-sm">HTML5</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="CSS3" width={64} height={64} />
+                  <Image src="/icons/css3.svg" alt="CSS3" width={64} height={64} />
                 </div>
+                <span className="text-muted text-sm">CSS3</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                  <Image src="/placeholder.svg?height=64&width=64" alt="JavaScript" width={64} height={64} />
+                  <Image src="/icons/javascript.svg" alt="JavaScript" width={64} height={64} />
                 </div>
+                <span className="text-muted text-sm">JavaScript</span>
               </div>
             </div>
           </div>
@@ -195,13 +202,13 @@ export default function Home() {
           <h3 className="font-semibold mb-6">Socials</h3>
           <div className="flex justify-center space-x-8">
             <Link href="https://github.com" className="hover:text-muted transition-colors">
-              <Image src="/placeholder.svg?height=32&width=32" alt="GitHub" width={32} height={32} />
+              <Image src="/icons/github.svg" alt="GitHub" width={32} height={32} />
             </Link>
             <Link href="https://linkedin.com" className="hover:text-muted transition-colors">
-              <Image src="/placeholder.svg?height=32&width=32" alt="LinkedIn" width={32} height={32} />
+              <Image src="/icons/linkedin.svg" alt="LinkedIn" width={32} height={32} />
             </Link>
-            <Link href="https://twitter.com" className="hover:text-muted transition-colors">
-              <Image src="/placeholder.svg?height=32&width=32" alt="Tumblr" width={32} height={32} />
+            <Link href="https://telegram.org" className="hover:text-muted transition-colors">
+              <Image src="/icons/telegram.svg" alt="Telegram" width={32} height={32} />
             </Link>
           </div>
         </div>
