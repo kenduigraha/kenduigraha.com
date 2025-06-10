@@ -23,29 +23,41 @@ export default function Contact() {
     const honeypot = formData.get("_gotcha") as string
     if (honeypot) {
       // This is likely a bot submission
+      console.log("Honeypot triggered - bot detected")
       setError("Spam detected. Please try again.")
       setIsSubmitting(false)
       return
     }
 
     try {
-      // Replace with your actual Formspree form ID
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      })
+      // Use a direct email approach instead of Formspree API
+      // This will open the user's email client
+      const firstName = formData.get("firstName") as string
+      const lastName = formData.get("lastName") as string
+      const email = formData.get("email") as string
+      const phone = formData.get("phone") as string
+      const message = formData.get("message") as string
 
-      if (response.ok) {
-        setIsSubmitted(true)
-        form.reset()
-        // Reset success message after 5 seconds
-        setTimeout(() => setIsSubmitted(false), 5000)
-      } else {
-        throw new Error("Form submission failed")
-      }
+      // Create mailto link
+      const subject = `Contact from ${firstName} ${lastName} via kenduigraha.com`
+      const body = `
+Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+
+Message:
+${message}
+      `.trim()
+
+      // Open email client
+      window.location.href = `mailto:ken.duigraha@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+      // Show success message
+      setIsSubmitted(true)
+      form.reset()
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000)
     } catch (error) {
       console.error("Error:", error)
       setError("Failed to send your message. Please try again later.")
@@ -135,11 +147,6 @@ export default function Contact() {
               <label htmlFor="_gotcha">Don't fill this out if you're human:</label>
               <input type="text" name="_gotcha" id="_gotcha" tabIndex={-1} autoComplete="off" />
             </div>
-
-            {/* Hidden fields for Formspree */}
-            <input type="hidden" name="_subject" value="New contact form submission from kenduigraha.com" />
-            <input type="hidden" name="_next" value="https://kenduigraha.com/contact?success=true" />
-            <input type="hidden" name="_captcha" value="false" />
 
             <div className="text-center">
               <Button
