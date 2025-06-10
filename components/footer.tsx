@@ -5,13 +5,10 @@ export default function Footer() {
     <footer className="bg-bg py-8 px-6">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Left Column */}
           <div>
             <h3 className="text-xl font-semibold mb-2 text-light">Ken D. Putra</h3>
             <p className="text-sm text-muted">Let's turn your ideas into real</p>
           </div>
-
-          {/* Middle Column - QUICK LINKS */}
           <div className="text-center">
             <h3 className="font-semibold mb-4 text-light">QUICK LINKS</h3>
             <div className="flex justify-center">
@@ -28,8 +25,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
-          {/* Right Column */}
           <div className="text-center md:text-right">
             <h3 className="font-semibold mb-4 text-light">CONTACT ME</h3>
             <p className="text-sm text-muted mb-2">ken.duigraha@gmail.com</p>
