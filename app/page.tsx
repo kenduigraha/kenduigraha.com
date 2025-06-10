@@ -11,7 +11,11 @@ export default function Home() {
         {/* Header */}
         <header className="px-6 py-6 lg:px-12">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-semibold text-light">Ken D. Putra</div>
+            <div className="text-xl font-semibold text-light">
+              <Link href="/" className="hover:text-accent transition-colors">
+                Ken D. Putra
+              </Link>
+            </div>
             <nav className="flex items-center space-x-8">
               <Link href="/" className="text-light hover:text-muted transition-colors">
                 Home
@@ -54,19 +58,27 @@ export default function Home() {
                 responsive web solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-light text-bg border-light hover:bg-gray-100 px-8 py-3 text-base font-medium rounded-md"
+                <Link
+                  href="https://www.upwork.com/freelancers/~01eed4ee138087d68e?mp_source=share"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Hire Me
-                </Button>
-                <Button
-                  size="lg"
-                  className="bg-bluesky hover:bg-bluesky/90 text-light px-8 py-3 text-base font-medium rounded-md"
-                >
-                  View Portfolio
-                </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="bg-light text-bg border-light hover:bg-gray-100 px-8 py-3 text-base font-medium rounded-md w-full"
+                  >
+                    Hire Me
+                  </Button>
+                </Link>
+                <Link href="/portfolio">
+                  <Button
+                    size="lg"
+                    className="bg-bluesky hover:bg-bluesky/90 text-light px-8 py-3 text-base font-medium rounded-md w-full"
+                  >
+                    View Portfolio
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
