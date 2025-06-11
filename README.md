@@ -1,7 +1,7 @@
 # kenduigraha.com
 [kenduigraha.com](https://kenduigraha.com)
 
-![alt text](/assets/images/kenduigraha.jpg)
+![alt text](/public/images/kenduigraha.jpg)
 
 Personal website of Ken Duigraha Putra
 
@@ -58,4 +58,3 @@ Pages:
 
 #### Contact Page
 <img width="422" alt="image" src="https://github.com/user-attachments/assets/a9f7ea1f-7378-42d5-9701-42839468764f" />
-
