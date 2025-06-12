@@ -2,9 +2,7 @@
 
 import type React from "react"
 import { useState, useRef } from "react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import Footer from "@/components/footer"
 
 // Security utilities
 const sanitizeInput = (input: string): string => {
@@ -172,27 +170,6 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <header className="bg-bg px-6 py-6 lg:px-12">
-        <div className="flex items-center justify-between">
-          <div className="text-xl font-semibold text-light">
-            <Link href="/" className="hover:text-accent transition-colors">
-              Ken D. Putra
-            </Link>
-          </div>
-          <nav className="flex items-center space-x-8">
-            <Link href="/" className="text-light hover:text-muted transition-colors">
-              Home
-            </Link>
-            <Link href="/portfolio" className="text-light hover:text-muted transition-colors">
-              Portfolio
-            </Link>
-            <Link href="/contact" className="text-accent font-semibold">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header>
 
       {/* Contact Form */}
       <div className="bg-light py-20 px-6">
@@ -340,9 +317,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </div>
   )
 }

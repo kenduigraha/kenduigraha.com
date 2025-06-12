@@ -2,34 +2,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import TechStackIcon from "@/components/tech-stack-icon"
-import Footer from "@/components/footer"
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header & Hero Section */}
       <section className="bg-bg">
-        {/* Header */}
-        <header className="px-6 py-6 lg:px-12">
-          <div className="flex items-center justify-between">
-            <div className="text-xl font-semibold text-light">
-              <Link href="/" className="hover:text-accent transition-colors">
-                Ken D. Putra
-              </Link>
-            </div>
-            <nav className="flex items-center space-x-8">
-              <Link href="/" className="text-light hover:text-muted transition-colors">
-                Home
-              </Link>
-              <Link href="/portfolio" className="text-light hover:text-muted transition-colors">
-                Portfolio
-              </Link>
-              <Link href="/contact" className="text-light hover:text-muted transition-colors">
-                Contact
-              </Link>
-            </nav>
-          </div>
-        </header>
 
         {/* Hero Content */}
         <div className="px-6 pb-20 pt-8 lg:px-12">
@@ -209,7 +187,6 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <Footer />
     </div>
   )
 }

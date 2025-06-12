@@ -4,7 +4,6 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import Footer from "@/components/footer"
 import GitHubStats from "@/components/github-stats"
 import { Github, Star, ExternalLink } from "lucide-react"
 
@@ -200,28 +199,6 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <header className="bg-bg px-6 py-6 lg:px-12">
-        <div className="flex items-center justify-between">
-          <div className="text-xl font-semibold text-light">
-            <Link href="/" className="hover:text-accent transition-colors">
-              Ken D. Putra
-            </Link>
-          </div>
-          <nav className="flex items-center space-x-8">
-            <Link href="/" className="text-light hover:text-muted transition-colors">
-              Home
-            </Link>
-            <Link href="/portfolio" className="text-accent font-semibold">
-              Portfolio
-            </Link>
-            <Link href="/contact" className="text-light hover:text-muted transition-colors">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header>
-
       {/* Portfolio Content */}
       <div className="bg-light py-20 px-6">
         <div className="container mx-auto">
@@ -404,9 +381,6 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   )
 }
